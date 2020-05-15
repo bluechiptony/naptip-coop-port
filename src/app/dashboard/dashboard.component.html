@@ -1,0 +1,220 @@
+<nav [ngClass]="{ 'navbar-open': drawerOpen, navbar: !drawerOpen }">
+  <div class="app-form-row"></div>
+  <ul class="navbar-nav">
+    <li
+      class="nav-item"
+      [routerLink]="['/dasboard']"
+      routerLinkActive="router-link-active"
+    >
+      <div class="list-menu">
+        <i class="uil uil-dashboard"></i>
+        <span class="nav-text">Dashboard</span>
+      </div>
+    </li>
+    <li class="nav-item" id="admin" (click)="changeOpenstate($event)">
+      <div class="list-menu">
+        <i class="uil uil-home"></i>
+        <span class="nav-text">Administration</span>
+      </div>
+      <div class="sub-menu">
+        <ul class="sub-list">
+          <li
+            class="sub-list-item"
+            [routerLink]="['organizations']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Zonal Commands</span>
+          </li>
+          <li
+            class="sub-list-item"
+            [routerLink]="['organizations']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Departments / Units</span>
+          </li>
+          <li
+            class="sub-list-item"
+            [routerLink]="['memos']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Memos</span>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item" id="admin" (click)="changeOpenstate($event)">
+      <div class="list-menu">
+        <i class="uil uil-home"></i>
+        <span class="nav-text">Carreer</span>
+      </div>
+      <div class="sub-menu">
+        <ul class="sub-list">
+          <li
+            class="sub-list-item"
+            [routerLink]="['organizations']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Promotions</span>
+          </li>
+          <li
+            class="sub-list-item"
+            [routerLink]="['organizations']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Training</span>
+          </li>
+          <li
+            class="sub-list-item"
+            [routerLink]="['organizations']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Postings</span>
+          </li>
+          <li
+            class="sub-list-item"
+            [routerLink]="['organizations']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Actions</span>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <div class="list-menu">
+        <i class="uil uil-building"></i>
+        <span class="nav-text">Leave Management</span>
+      </div>
+      <div class="sub-menu">
+        <ul class="sub-list">
+          <li
+            class="sub-list-item"
+            [routerLink]="['cases', 'list']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Leave Requests</span>
+          </li>
+          <li
+            class="sub-list-item"
+            [routerLink]="['cases', 'categories']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Current Leaves</span>
+          </li>
+          <li
+            class="sub-list-item"
+            [routerLink]="['reports', 'general']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Leave Types</span>
+          </li>
+          <!-- <li
+              class="sub-list-item"
+              [routerLink]="['reports', 'incidents']"
+              routerLinkActive="router-link-active"
+            >
+              <span>Incident Reports</span>
+            </li>
+            <li
+              class="sub-list-item"
+              [routerLink]="['reports', 'rescues']"
+              routerLinkActive="router-link-active"
+            >
+              <span>Rescue Reports</span>
+            </li> -->
+        </ul>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <div class="list-menu">
+        <i class="uil uil-invoice"></i>
+        <span class="nav-text">Staff Members</span>
+      </div>
+      <div class="sub-menu">
+        <ul class="sub-list">
+          <li
+            class="sub-list-item"
+            [routerLink]="['victims']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Victims</span>
+          </li>
+          <li
+            class="sub-list-item"
+            [routerLink]="['suspects']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Suspects</span>
+          </li>
+          <!-- <li
+              class="sub-list-item"
+              [routerLink]="['dispensary', 'categories']"
+              routerLinkActive="router-link-active"
+            >
+              <span>Offenders</span>
+            </li> -->
+        </ul>
+      </div>
+    </li>
+    <!-- <li class="nav-item">
+        <div
+          class="list-menu"
+          [routerLink]="['projects']"
+          routerLinkActive="router-link-active"
+        >
+          <i class="uil uil-user-square"></i>
+          <span class="nav-text">Projects</span>
+        </div>
+      </li> -->
+
+    <li class="nav-item">
+      <div class="list-menu">
+        <i class="uil uil-users-alt"></i>
+        <span class="nav-text">Users</span>
+      </div>
+      <div class="sub-menu">
+        <ul class="sub-list">
+          <li
+            class="sub-list-item"
+            [routerLink]="['users', 'staff']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Accounts</span>
+          </li>
+          <li
+            class="sub-list-item"
+            [routerLink]="['users', 'agents']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Users</span>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item" (click)="logOut()">
+      <div class="list-menu">
+        <i class="uil uil-sign-out-alt"></i>
+        <span class="nav-text">Logout</span>
+      </div>
+    </li>
+  </ul>
+</nav>
+<main
+  class="bg-backdrop full-page-height"
+  [ngClass]="{ 'main-content-open': drawerOpen, 'main-content': !drawerOpen }"
+>
+  <div class="container-fluid">
+    <i class="uil uil-list-ul link-up" (click)="toggleDrawer()"></i>
+    &nbsp;
+    <img src="assets/images/cropped-logo.jpg" alt="" srcset="" height="30" />
+    <span class="pull-right profile-name link-up" *ngIf="authState?.loggedIn"
+      ><span>{{ loggedInUser?.firstName }} {{ loggedInUser?.lastName }} </span>
+      <span><i class="uil uil-user-circle profile-name"></i></span>
+    </span>
+  </div>
+  <div class="top-padding">
+    <router-outlet></router-outlet>
+  </div>
+</main>

@@ -1,0 +1,140 @@
+@import "../styles/colors.scss";
+html {
+  font-size: 14px;
+  font-family: "Montserrat", "Nanum Gothic", sans-serif;
+}
+body {
+  font-family: "Montserrat", "Nanum Gothic", sans-serif;
+  font-size: 14px;
+  line-height: 1.5rem;
+  color: #303030;
+}
+
+.center-text {
+  text-align: center;
+}
+.right-text {
+  text-align: right;
+}
+.bold {
+  font-weight: bold;
+}
+
+.app-button {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: bold;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.heading {
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.notice-heading {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.subtitle {
+  font-size: 0.7rem;
+}
+
+.error-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: $errorRed;
+}
+
+.form-prompt {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: $lightGreenText;
+}
+
+.form-icon {
+  i {
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    color: $lightGreenText;
+  }
+  i:hover {
+    color: $lightGreen;
+  }
+}
+
+.profile-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: $darkBlue;
+}
+
+.hover-link:hover {
+  color: $lightGreen;
+}
+
+.route-heading {
+  padding: 1rem 0;
+}
+
+.route-header-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: $darkGreen;
+}
+
+.error-state-text {
+  font-size: 1rem;
+  // display: inline-block;
+  padding: 2rem 0;
+}
+
+.modal-heading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1rem 0;
+  color: $darkGreen;
+}
+
+.excerpt {
+  span {
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  // .ovr {
+  // }
+}
+
+span.ovr {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.form-section-header {
+  font-weight: 700;
+}
+
+.overview-label {
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+.mega-number-text {
+  font-size: 5rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+
+.mini-number-text {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}

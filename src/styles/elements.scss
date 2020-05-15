@@ -1,0 +1,257 @@
+@import "colors";
+@import "animations";
+
+.full-page-height {
+  min-height: 100vh;
+}
+.full-width {
+  width: 100%;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+
+.clear {
+  clear: both;
+}
+.simple-flex {
+  display: flex;
+  align-items: center;
+}
+.centered-flex {
+  @extend .simple-flex;
+  justify-content: center;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.top-padding {
+  padding-top: 1.5rem;
+}
+
+.vert-padding {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.vertical-padding-bottom {
+  padding: 5px 0 25px 0;
+}
+
+.link-up {
+  cursor: pointer;
+}
+
+.app-form-row {
+  box-sizing: border-box;
+  padding: 5px 0;
+  position: relative;
+}
+
+.app-button {
+  // width: 100%;
+  // padding: 10px 10px;
+  // cursor: pointer;
+  // border: 0;
+  // margin: 0;
+
+  display: block;
+  overflow: hidden;
+  border: none;
+  position: relative;
+  border-radius: 4px;
+  padding: 11px 50px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Montserrat";
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.app-button:hover {
+  &.bg-dark-blue {
+    background-color: darken($color: $darkBlue, $amount: 10);
+  }
+  &.bg-main {
+    background-color: lighten($color: $main, $amount: 20);
+  }
+}
+
+.input-text {
+  display: block;
+  font-size: 1rem;
+  padding: 11px 10px;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  // padding: 10px 10px;
+  // border-width: 0.03px;
+  border: 0.03px solid #e3e3e3;
+  transition: all 0.3s ease-in-out;
+}
+.input-text:focus {
+  border: 0.03px solid $main;
+}
+
+.login-box {
+  box-sizing: border-box;
+  border-radius: 0.3rem;
+  padding: 2rem 1.5rem;
+}
+
+@keyframes buttonSlideAnimation {
+  0% {
+    transform: scaleX(0);
+  }
+  25% {
+    transform: scaleX(0.25);
+  }
+  50% {
+    transform: scaleX(0.5);
+  }
+  75% {
+    transform: scaleX(0.75);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.anim-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: #3f9b42;
+
+  overflow: hidden;
+  z-index: -1;
+  transform: scaleX(0);
+  animation-name: buttonSlideAnimation;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  transform-origin: left;
+}
+
+.load-hide {
+  opacity: 0;
+}
+
+.status-pill {
+  display: inline;
+  border-radius: 0.2rem;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+}
+
+.status-true {
+  background-color: $lightGreen;
+}
+
+.status-false {
+  background-color: $errorRed;
+}
+
+.category-box {
+  border-radius: 0.4rem;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  @include appTransition();
+}
+
+.category-box:hover {
+  box-shadow: 0 0 20px 0 #5e5e5e22;
+}
+.card-main {
+  font-weight: bold;
+  color: $lightGreenText;
+}
+
+.overview-box {
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 20px 0 rgba($color: #000000, $alpha: 0.04);
+  margin-bottom: 30px;
+  position: relative;
+  .overview-icon {
+    font-size: 7rem;
+    opacity: 0.1;
+    position: absolute;
+    top: 30px;
+  }
+}
+
+.two-column-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.three-column-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.three-column-grid-nogap {
+  display: grid;
+  gap: 0px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+div.three-grid div:nth-child(2) {
+  border-left: 1px solid #e3e3e3;
+  border-right: 1px solid #e3e3e3;
+}
+
+.three-grid {
+  div {
+    box-sizing: border-box;
+    padding: 2rem 0;
+  }
+}
+
+div.overview-content div.overview-list-box {
+  border-bottom: 1px solid #e3e3e3;
+  padding: 0.5rem 1rem;
+}
+
+div.overview-content div.overview-list-box:last-child {
+  border-bottom: 0;
+}
+
+.overview-list-box {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.overview-list-box:hover {
+  background-color: #0a223919;
+}
+
+.table-filter-grid {
+  display: grid;
+  grid-template-columns: auto 300px 250px;
+  gap: 20px;
+}
