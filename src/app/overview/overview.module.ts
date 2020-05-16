@@ -8,13 +8,21 @@ import { NoticeOverviewComponent } from './notice-overview/notice-overview.compo
 import { MemoOverviewComponent } from './memo-overview/memo-overview.component';
 import { PromotionOverviewComponent } from './promotion-overview/promotion-overview.component';
 import { StaffOverviewComponent } from './staff-overview/staff-overview.component';
-
+import { MatDependenciesModule } from '../shared/mat-dependencies/mat-dependencies.module';
+import { UserOverviewComponent } from './user-overview/user-overview.component';
+import { GrandOverviewComponent } from './grand-overview/grand-overview.component';
 
 @NgModule({
-  declarations: [OverviewComponent, EventOverviewComponent, NoticeOverviewComponent, MemoOverviewComponent, PromotionOverviewComponent, StaffOverviewComponent],
-  imports: [
-    CommonModule,
-    OverviewRoutingModule
-  ]
+  declarations: [
+    OverviewComponent,
+    EventOverviewComponent,
+    NoticeOverviewComponent,
+    MemoOverviewComponent,
+    PromotionOverviewComponent,
+    StaffOverviewComponent,
+    UserOverviewComponent,
+    GrandOverviewComponent,
+  ],
+  imports: [CommonModule, OverviewRoutingModule, MatDependenciesModule],
 })
-export class OverviewModule { }
+export class OverviewModule {}

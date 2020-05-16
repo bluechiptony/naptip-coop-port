@@ -7,7 +7,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 1.5rem;
-  color: #303030;
+  color: #4f4f4f;
 }
 
 .center-text {
@@ -81,6 +81,7 @@ body {
 }
 
 .route-header-text {
+  font-family: "Montserrat";
   font-size: 1.4rem;
   font-weight: 600;
   color: lighten($color: $main, $amount: 20);
