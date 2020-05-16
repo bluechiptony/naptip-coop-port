@@ -1,10 +1,10 @@
 @import "../styles/colors.scss";
 html {
   font-size: 14px;
-  font-family: "Montserrat", "Nanum Gothic", sans-serif;
+  font-family: "Montserrat", "sans-serif";
 }
 body {
-  font-family: "Montserrat", "Nanum Gothic", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 1.5rem;
   color: #303030;
@@ -83,7 +83,7 @@ body {
 .route-header-text {
   font-size: 1.4rem;
   font-weight: 600;
-  color: $darkGreen;
+  color: lighten($color: $main, $amount: 20);
 }
 
 .error-state-text {

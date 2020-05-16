@@ -2,13 +2,19 @@
 
 .main-content {
   margin-left: 5rem;
-  padding: 1rem;
+  // padding: 1rem;
 }
 .main-content-open {
   margin-left: 20rem;
+  // padding: 1rem;
+}
+.top-bar {
   padding: 1rem;
 }
-
+.router-padding {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 .navbar {
   width: 5rem;
   height: 100vh;
@@ -140,4 +146,8 @@
 
 .router-link-active {
   color: #f0f014;
+}
+
+.router-bg {
+  background-color: #fcfaff;
 }
