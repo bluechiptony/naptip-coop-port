@@ -239,18 +239,25 @@ Dialog reset style
 
 .mat-tab-label,
 .mat-tab-link {
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
   font-family: "Montserrat";
   font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .mat-tab-label:focus {
-  border-top-left-radius: 0.2rem;
-  border-top-right-radius: 0.2rem;
   background-color: $main;
   color: #fff !important;
   .mat-tab-label-content {
     color: #ffffff !important;
   }
+}
+.mat-tab-label:hover {
+  background-color: lighten($color: $main, $amount: 80);
+}
+.mat-tab-label:focus:hover {
+  background-color: lighten($color: $main, $amount: 10);
 }
 
 .mat-tab-group.mat-primary .mat-ink-bar,
