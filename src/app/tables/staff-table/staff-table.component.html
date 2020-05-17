@@ -65,6 +65,20 @@
             </span>
           </td>
         </ng-container>
+        <ng-container matColumnDef="designation">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            class="table-header-cell uppercase"
+          >
+            Designation
+          </th>
+          <td mat-cell *matCellDef="let row" class="table-cell">
+            <span class="table-cell-text block ellipsis">
+              {{ row.designation }}
+            </span>
+          </td>
+        </ng-container>
 
         <ng-container matColumnDef="phoneNumber">
           <th

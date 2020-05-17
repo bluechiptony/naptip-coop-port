@@ -16,6 +16,7 @@ export class StaffTableComponent implements OnInit {
     'userCode',
     'fullName',
     'emailAddress',
+    'designation',
     'phoneNumber',
     'accountType',
     'menuHolder',
