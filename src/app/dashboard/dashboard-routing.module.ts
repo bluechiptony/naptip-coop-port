@@ -74,6 +74,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('../activity/activity.module').then((m) => m.ActivityModule),
       },
+      {
+        path: 'transfers',
+        loadChildren: () =>
+          import('../transfer/transfer.module').then((m) => m.TransferModule),
+      },
     ],
   },
 ];

@@ -3,13 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { PromotionRoutingModule } from './promotion-routing.module';
 import { PromotionComponent } from './promotion.component';
-
+import { PromotionTableModule } from '../tables/promotion-table/promotion-table.module';
 
 @NgModule({
   declarations: [PromotionComponent],
-  imports: [
-    CommonModule,
-    PromotionRoutingModule
-  ]
+  imports: [CommonModule, PromotionRoutingModule, PromotionTableModule],
 })
-export class PromotionModule { }
+export class PromotionModule {}

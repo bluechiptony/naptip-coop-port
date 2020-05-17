@@ -32,9 +32,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.drawerOpen = !this.drawerOpen;
   };
 
-  changeOpenstate(evt: any) {
-    console.log(evt.target);
-  }
+  changeOpenstate(evt: any) {}
 
   logOut() {
     // this.store.dispatch({ type: AuthActions.LOGOUT_USER });
