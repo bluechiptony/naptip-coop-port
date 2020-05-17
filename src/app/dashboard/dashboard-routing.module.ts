@@ -64,10 +64,18 @@ const routes: Routes = [
         loadChildren: () =>
           import('../staff/staff.module').then((m) => m.StaffModule),
       },
+      {
+        path: 'users',
+        loadChildren: () =>
+          import('../user/user.module').then((m) => m.UserModule),
+      },
+      {
+        path: 'activity',
+        loadChildren: () =>
+          import('../activity/activity.module').then((m) => m.ActivityModule),
+      },
     ],
   },
-  { path: 'users', loadChildren: () => import('../user/user.module').then(m => m.UserModule) },
-  { path: 'activity', loadChildren: () => import('../activity/activity.module').then(m => m.ActivityModule) },
 ];
 
 @NgModule({
