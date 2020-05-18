@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { authenticationReducer } from './state-management/reducers/authenticatio
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    RouterModule,
     ToastrModule.forRoot({
       tapToDismiss: true,
       closeButton: true,

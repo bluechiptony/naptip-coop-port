@@ -32,7 +32,16 @@
             Zone Number
           </th>
           <td mat-cell *matCellDef="let row" class="table-cell">
-            <span class="table-cell-text block ellipsis">
+            <span
+              class="table-cell-text block ellipsis"
+              [routerLink]="[
+                '/dashboard',
+                'zonal-commands',
+                'view',
+                row.zoneCode
+              ]"
+              routerLinkActive="router-link-active"
+            >
               {{ row.zoneCode }}
             </span>
           </td>
@@ -46,7 +55,15 @@
             Zonal Command Name
           </th>
           <td mat-cell *matCellDef="let row" class="table-cell">
-            <span class="table-cell-text block ellipsis">
+            <span
+              class="table-cell-text block ellipsis"
+              [routerLink]="[
+                '/dashboard',
+                'zonal-commands',
+                'view',
+                row.zoneCode
+              ]"
+            >
               {{ row.zoneName }}
             </span>
           </td>

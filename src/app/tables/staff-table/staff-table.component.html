@@ -7,7 +7,7 @@
         <input
           type="text"
           class="input-text full-width"
-          placeholder="Search for user account"
+          placeholder="Search for staff member"
         />
       </div>
       <div>
@@ -32,7 +32,11 @@
             Staff Number
           </th>
           <td mat-cell *matCellDef="let row" class="table-cell">
-            <span class="table-cell-text block ellipsis">
+            <span
+              class="table-cell-text block ellipsis"
+              [routerLink]="['/dashboard', 'staff', 'view', row.staffNumber]"
+              routerLinkActive="router-link-active"
+            >
               {{ row.staffNumber }}
             </span>
           </td>

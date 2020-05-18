@@ -1,3 +1,33 @@
 <div class="container-fluid">
-  <div></div>
+  <div class="route-box bg-white">
+    <div class="route-heading">
+      <span class="route-header-text">Staff Name </span>
+    </div>
+    <div></div>
+    <div>
+      <mat-tab-group>
+        <mat-tab label="Biodata">
+          <div class="container-fluid">
+            <app-biodata></app-biodata>
+          </div>
+        </mat-tab>
+        <mat-tab label="Qualifications"> </mat-tab>
+        <mat-tab label="Training">
+          <app-training-table></app-training-table>
+        </mat-tab>
+        <mat-tab label="Promotion">
+          <app-promotion-table></app-promotion-table>
+        </mat-tab>
+        <mat-tab label="Posting">
+          <app-posting-table></app-posting-table>
+        </mat-tab>
+        <mat-tab label="Transfer">
+          <app-transfer-table></app-transfer-table>
+        </mat-tab>
+        <mat-tab label="Leaves">
+          <app-leave-request-table></app-leave-request-table>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
 </div>

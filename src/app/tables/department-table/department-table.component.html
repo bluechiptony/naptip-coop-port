@@ -32,7 +32,11 @@
             Department Number
           </th>
           <td mat-cell *matCellDef="let row" class="table-cell">
-            <span class="table-cell-text block ellipsis">
+            <span
+              class="table-cell-text block ellipsis"
+              [routerLink]="['/dashboard', 'departments', 'view', row.id]"
+              routerLinkActive="router-link-active"
+            >
               {{ row.id }}
             </span>
           </td>
@@ -46,7 +50,11 @@
             Department Name
           </th>
           <td mat-cell *matCellDef="let row" class="table-cell">
-            <span class="table-cell-text block ellipsis">
+            <span
+              class="table-cell-text block ellipsis"
+              [routerLink]="['/dashboard', 'departments', 'view', row.id]"
+              routerLinkActive="router-link-active"
+            >
               {{ row.departmentName }}
             </span>
           </td>
@@ -60,7 +68,11 @@
             Department Code
           </th>
           <td mat-cell *matCellDef="let row" class="table-cell">
-            <span class="table-cell-text block ellipsis">
+            <span
+              class="table-cell-text block ellipsis"
+              [routerLink]="['/dashboard', 'departments', 'view', row.id]"
+              routerLinkActive="router-link-active"
+            >
               {{ row.departmentCode }}
             </span>
           </td>

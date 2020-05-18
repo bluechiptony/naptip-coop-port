@@ -11,7 +11,11 @@
         />
       </div>
       <div>
-        <button class="app-button uppercase bg-main text-white pull-right">
+        <button
+          class="app-button uppercase bg-main text-white pull-right"
+          [routerLink]="['/dashboard', 'memos', 'new-memo']"
+          routerLinkActive="router-link-active"
+        >
           Create Memo
         </button>
       </div>
@@ -32,7 +36,11 @@
             Memo Number
           </th>
           <td mat-cell *matCellDef="let row" class="table-cell">
-            <span class="table-cell-text block ellipsis">
+            <span
+              class="table-cell-text block ellipsis"
+              [routerLink]="['/dashboard', 'memos', 'view', row.memoCode]"
+              routerLinkActive="router-link-active"
+            >
               {{ row.memoCode }}
             </span>
           </td>
@@ -46,7 +54,11 @@
             Title
           </th>
           <td mat-cell *matCellDef="let row" class="table-cell">
-            <span class="table-cell-text block ellipsis">
+            <span
+              class="table-cell-text block ellipsis"
+              [routerLink]="['/dashboard', 'memos', 'view', row.memoCode]"
+              routerLinkActive="router-link-active"
+            >
               {{ row.title }}
             </span>
           </td>
@@ -60,7 +72,11 @@
             Category
           </th>
           <td mat-cell *matCellDef="let row" class="table-cell">
-            <span class="table-cell-text block ellipsis">
+            <span
+              class="table-cell-text block ellipsis"
+              [routerLink]="['/dashboard', 'memos', 'view', row.memoCode]"
+              routerLinkActive="router-link-active"
+            >
               {{ row.category }}
             </span>
           </td>
@@ -75,7 +91,11 @@
             Orgigination
           </th>
           <td mat-cell *matCellDef="let row" class="table-cell">
-            <span class="table-cell-text block ellipsis">
+            <span
+              class="table-cell-text block ellipsis"
+              [routerLink]="['/dashboard', 'memos', 'view', row.memoCode]"
+              routerLinkActive="router-link-active"
+            >
               {{ row.origin }}
             </span>
           </td>
@@ -90,7 +110,11 @@
           </th>
 
           <td mat-cell *matCellDef="let row" class="table-cell">
-            <span class="table-cell-text block ellipsis">
+            <span
+              class="table-cell-text block ellipsis"
+              [routerLink]="['/dashboard', 'memos', 'view', row.memoCode]"
+              routerLinkActive="router-link-active"
+            >
               {{ row.respondee }}
             </span>
           </td>

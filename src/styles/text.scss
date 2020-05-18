@@ -10,6 +10,10 @@ body {
   color: #4f4f4f;
 }
 
+.italics {
+  font-style: italic;
+}
+
 .center-text {
   text-align: center;
 }
@@ -38,6 +42,10 @@ body {
   font-weight: 600;
   font-size: 1.1rem;
 }
+.item-heading-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
 
 .subtitle {
   font-size: 0.7rem;
@@ -52,7 +60,7 @@ body {
 .form-prompt {
   font-size: 0.9rem;
   font-weight: 600;
-  color: $lightGreenText;
+  color: lighten($color: $main, $amount: 20);
 }
 
 .form-icon {
