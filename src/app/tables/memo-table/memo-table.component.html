@@ -63,6 +63,28 @@
             </span>
           </td>
         </ng-container>
+        <ng-container matColumnDef="status">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            class="table-header-cell uppercase"
+          >
+            Memo Status
+          </th>
+          <td mat-cell *matCellDef="let row" class="table-cell">
+            <span
+              class="table-cell-text block ellipsis table-pill"
+              [ngClass]="{
+                'bg-pill-green': row.resolved,
+                'bg-pill-pending': !row.resolved
+              }"
+            >
+              <span class="">
+                {{ row.resolved ? "Resolved" : "Open" }}
+              </span>
+            </span>
+          </td>
+        </ng-container>
         <ng-container matColumnDef="emailAddress">
           <th
             mat-header-cell

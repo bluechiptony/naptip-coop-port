@@ -5,6 +5,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { TransferService } from 'src/app/services/transfer.service';
 import { MatSort } from '@angular/material/sort';
 import { Transfer } from 'src/app/model/transfer.model';
+import { MatDialog } from '@angular/material/dialog';
+import { TransferRequestModalComponent } from 'src/app/modals/transfer-request-modal/transfer-request-modal.component';
 
 @Component({
   selector: 'app-transfer-table',
@@ -30,7 +32,7 @@ export class TransferTableComponent implements OnInit {
   hasError: boolean;
   errorMessage: string;
 
-  constructor(private promotion: TransferService) {}
+  constructor(private promotion: TransferService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.prepTableResources();
@@ -82,5 +84,11 @@ export class TransferTableComponent implements OnInit {
       this.dataSource.data.push(user);
     });
     this.dataSource.paginator = this.paginator;
+  };
+
+  openTransferModal = (): void => {
+    this.dialog.open(TransferRequestModalComponent, {
+      width: '500px',
+    });
   };
 }

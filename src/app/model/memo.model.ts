@@ -6,6 +6,7 @@ export interface Memo {
   title: string;
   category: string;
   origin: string;
+  resolved: boolean;
   respondee: string;
   createdDate: Date;
   updatedDate: Date;
@@ -61,6 +62,7 @@ export const memos: Memo[] = [
     title: 'Notice of adjustment',
     category: 'General Memo',
     origin: 'Michael Ofi',
+    resolved: true,
     respondee: 'Max McGee',
     createdDate: new Date(),
     updatedDate: new Date(),
@@ -71,6 +73,7 @@ export const memos: Memo[] = [
     title: 'Notice of retirement',
     category: 'General Memo',
     origin: 'Michael Ofi',
+    resolved: true,
     respondee: 'Max McGee',
     createdDate: new Date(),
     updatedDate: new Date(),
@@ -81,6 +84,7 @@ export const memos: Memo[] = [
     title: 'Restructure of affairs',
     category: 'General Memo',
     origin: 'Michael Ofi',
+    resolved: false,
     respondee: 'Max McGee',
     createdDate: new Date(),
     updatedDate: new Date(),
@@ -91,6 +95,7 @@ export const memos: Memo[] = [
     title: 'Class action memo',
     category: 'General Memo',
     origin: 'Michael Ofi',
+    resolved: false,
     respondee: 'Max McGee',
     createdDate: new Date(),
     updatedDate: new Date(),

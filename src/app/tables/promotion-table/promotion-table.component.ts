@@ -5,6 +5,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { PromotionService } from 'src/app/services/promotion.service';
 import { MatSort } from '@angular/material/sort';
 import { Promotion } from 'src/app/model/promotion.model';
+import { PostingRequestModalComponent } from 'src/app/modals/posting-request-modal/posting-request-modal.component';
+import { MatDialog } from '@angular/material/dialog';
+import { PromotionRequestModalComponent } from 'src/app/modals/promotion-request-modal/promotion-request-modal.component';
 
 @Component({
   selector: 'app-promotion-table',
@@ -30,7 +33,7 @@ export class PromotionTableComponent implements OnInit {
   hasError: boolean;
   errorMessage: string;
 
-  constructor(private promotion: PromotionService) {}
+  constructor(private promotion: PromotionService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.prepTableResources();
@@ -82,5 +85,11 @@ export class PromotionTableComponent implements OnInit {
       this.dataSource.data.push(user);
     });
     this.dataSource.paginator = this.paginator;
+  };
+
+  openTransferModal = (): void => {
+    this.dialog.open(PromotionRequestModalComponent, {
+      width: '500px',
+    });
   };
 }

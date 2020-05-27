@@ -15,6 +15,7 @@ export class MemoTableComponent implements OnInit {
   tableColumns: string[] = [
     'userCode',
     'fullName',
+    'status',
     'emailAddress',
     'phoneNumber',
     // 'accountType',

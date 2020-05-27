@@ -67,7 +67,7 @@ export const staffMembers: Staff[] = [
     id: '93474',
     staffCode: 'HSHRT5346',
     staffNumber: 'HS00394',
-    firstName: 'MUcharl',
+    firstName: 'Mucharl',
     middlename: 'Mulan',
     lastName: 'Dapson',
     dob: new Date(),

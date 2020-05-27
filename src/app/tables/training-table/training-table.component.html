@@ -11,7 +11,11 @@
         />
       </div>
       <div>
-        <button class="app-button uppercase bg-main text-white pull-right">
+        <button
+          class="app-button uppercase bg-main text-white pull-right"
+          [routerLink]="['/dashboard', 'training', 'create']"
+          routerLinkActive="router-link-active"
+        >
           New Request
         </button>
       </div>

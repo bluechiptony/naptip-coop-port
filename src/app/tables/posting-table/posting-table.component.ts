@@ -5,6 +5,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { PostingService } from 'src/app/services/posting.service';
 import { MatSort } from '@angular/material/sort';
 import { Posting } from 'src/app/model/posting.model';
+import { MatDialog } from '@angular/material/dialog';
+import { PostingRequestModalComponent } from 'src/app/modals/posting-request-modal/posting-request-modal.component';
 
 @Component({
   selector: 'app-posting-table',
@@ -30,7 +32,7 @@ export class PostingTableComponent implements OnInit {
   hasError: boolean;
   errorMessage: string;
 
-  constructor(private promotion: PostingService) {}
+  constructor(private promotion: PostingService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.prepTableResources();
@@ -82,5 +84,11 @@ export class PostingTableComponent implements OnInit {
       this.dataSource.data.push(user);
     });
     this.dataSource.paginator = this.paginator;
+  };
+
+  openPostingModal = (): void => {
+    this.dialog.open(PostingRequestModalComponent, {
+      width: '500px',
+    });
   };
 }

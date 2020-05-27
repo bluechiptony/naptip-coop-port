@@ -11,7 +11,10 @@
         />
       </div>
       <div>
-        <button class="app-button uppercase bg-main text-white pull-right">
+        <button
+          class="app-button uppercase bg-main text-white pull-right"
+          (click)="openTransferModal()"
+        >
           New Request
         </button>
       </div>
@@ -102,13 +105,16 @@
             class="table-header-cell uppercase"
           ></th>
           <td mat-cell *matCellDef="let row" class="table-cell">
-            <span class="table-cell-text block ellipsis">
-              <i class="uil uil-ellipsis-v" [matMenuTriggerFor]="userMenu"></i>
-              <mat-menu #userMenu="matMenu" xPosition="before">
-                <span mat-menu-item>
-                  Edit Item
-                </span>
-              </mat-menu>
+            <span
+              class="table-cell-text block ellipsis table-pill"
+              [ngClass]="{
+                'bg-pill-green': row.approved,
+                'bg-pill-pending': !row.approved
+              }"
+            >
+              <span class="">
+                {{ row.status ? "Approved" : "Pending" }}
+              </span>
             </span>
           </td>
         </ng-container>
