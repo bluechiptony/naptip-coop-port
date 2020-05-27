@@ -10,6 +10,8 @@
   .object-nav-list-item {
     display: block;
     padding: 2rem 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
     cursor: pointer;
     box-sizing: border-box;
     border-left: 3px solid transparent;
