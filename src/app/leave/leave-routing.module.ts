@@ -9,6 +9,7 @@ import { CurrentLeavesComponent } from './current-leaves/current-leaves.componen
 const routes: Routes = [
   { path: '', component: LeaveComponent },
   { path: 'requests', component: LeaveRequestsComponent },
+  { path: 'view/:code', component: LeaveRequestsComponent },
   { path: 'types', component: LeaveTypesComponent },
   { path: 'current', component: CurrentLeavesComponent },
 ];

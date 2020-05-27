@@ -1,15 +1,40 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { editorConfig } from 'src/app/shared/form-dependencies/form-dependencies.module';
+import { Staff } from 'src/app/model/staff.model';
+import { MatDialog } from '@angular/material/dialog';
+import { StaffSelectionModalComponent } from 'src/app/modals/staff-selection-modal/staff-selection-modal.component';
 
 @Component({
   selector: 'app-new-memo',
   templateUrl: './new-memo.component.html',
-  styleUrls: ['./new-memo.component.scss']
+  styleUrls: ['./new-memo.component.scss'],
 })
 export class NewMemoComponent implements OnInit {
+  meetingForm: FormGroup;
+  editorConfig: AngularEditorConfig = editorConfig;
+  selectedStaff: Staff[] = [];
 
-  constructor() { }
+  constructor(private fb: FormBuilder, private dialog: MatDialog) {}
 
   ngOnInit(): void {
+    this.buildForm();
   }
 
+  buildForm = (): void => {
+    this.meetingForm = this.fb.group({
+      noticeMessage: [],
+    });
+  };
+
+  openStaffSelect = (): void => {
+    this.dialog.open(StaffSelectionModalComponent, {
+      width: '70%',
+    });
+  };
+
+  get noticeMessage() {
+    return this.meetingForm.get('noticeMessage');
+  }
 }

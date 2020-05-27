@@ -1,0 +1,22 @@
+<div class="user-pill">
+  <div class="holder">
+    <img
+      src="assets/images/profile-pic.svg"
+      alt=""
+      height="30"
+      width="30"
+      srcset=""
+    />
+  </div>
+  <div class="holder">
+    <div>
+      <span class="form-prompt block"
+        >{{ person.firstName }} {{ person.lastName }}</span
+      >
+      <span class="block">{{ person?.department?.departmentName }}</span>
+    </div>
+  </div>
+  <div class="holder">
+    <i class="uil uil-trash-alt pointer"></i>
+  </div>
+</div>

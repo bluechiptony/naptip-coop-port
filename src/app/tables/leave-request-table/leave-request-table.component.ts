@@ -5,6 +5,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { LeaveService } from 'src/app/services/leave.service';
 import { MatSort } from '@angular/material/sort';
 import { Leave } from 'src/app/model/leave.model';
+import { MatDialog } from '@angular/material/dialog';
+import { LeaveRequestModalComponent } from 'src/app/modals/leave-request-modal/leave-request-modal.component';
 
 @Component({
   selector: 'app-leave-request-table',
@@ -18,6 +20,7 @@ export class LeaveRequestTableComponent implements OnInit {
     'emailAddress',
     'phoneNumber',
     'accountType',
+    'leaveStatus',
     'menuHolder',
   ];
   userSubscription: Subscription;
@@ -30,7 +33,7 @@ export class LeaveRequestTableComponent implements OnInit {
   hasError: boolean;
   errorMessage: string;
 
-  constructor(private leave: LeaveService) {}
+  constructor(private leave: LeaveService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.prepTableResources();
@@ -82,5 +85,11 @@ export class LeaveRequestTableComponent implements OnInit {
       this.dataSource.data.push(user);
     });
     this.dataSource.paginator = this.paginator;
+  };
+
+  openLeaveRequest = () => {
+    this.dialog.open(LeaveRequestModalComponent, {
+      width: '500px',
+    });
   };
 }

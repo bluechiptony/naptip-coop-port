@@ -4,6 +4,7 @@
 // @import "styles/grid.scss";
 @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~ng-pick-datetime/assets/style/picker.min.css";
 @import "styles/bootstrap-grid.scss";
 @import "~ngx-toastr/toastr";
 @import "styles/elements.scss";
@@ -25,7 +26,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background-color: #7afac3;
+  background-color: #4e0467;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -136,18 +137,12 @@ td.mat-row {
 Dialog reset style
 */
 .mat-dialog-container {
-  // box-shadow:0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
   box-shadow: rgba(51, 78, 205, 0.2);
-  //   background-color: $mainPurple;
   padding: 0 !important;
-  // animation: jello 0.3 linear delay iteration-count direction fill-mode;
 }
 
 .cdk-overlay-dark-backdrop {
-  //background: rgba(0,0,0,.32);
-  background: rgba(51, 78, 205, 0.3);
-  background: rgba(11, 119, 45, 0.3);
-  // background: $darkGreen;
+  background: rgba(83, 11, 119, 0.174);
 }
 
 .modal-padding {
@@ -155,11 +150,16 @@ Dialog reset style
   padding: 2rem 2.2rem;
 }
 
+.ng-select.ng-select-opened.ng-select-bottom > .ng-select-container {
+  padding: 3px 10px;
+}
+
 .ng-select .ng-select-container {
   border-radius: 0;
   // border: 0.03px solid $darkGreen;
   // padding: 5px 0;
-  padding: 23px 10px;
+  // padding: 23px 10px;
+  padding: 3px 10px;
   // padding: 5px 10px;
   transition: all 0.3s ease-in-out;
 }
@@ -188,6 +188,10 @@ Dialog reset style
   .ng-select-container .ng-arrow {
     border-color: $darkGreen transparent $darkGreen;
   }
+}
+
+.angular-editor-textarea {
+  min-height: 200px !important;
 }
 
 .toast-container .ngx-toastr {

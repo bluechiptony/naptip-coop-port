@@ -12,6 +12,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTabsModule } from '@angular/material/tabs';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 @NgModule({
   declarations: [],
@@ -28,6 +29,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatMenuModule,
     MatCheckboxModule,
     MatTabsModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
   ],
   exports: [
     MatTableModule,
@@ -41,6 +44,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatMenuModule,
     MatCheckboxModule,
     MatTabsModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
   ],
 })
 export class MatDependenciesModule {}

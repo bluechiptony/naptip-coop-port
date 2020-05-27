@@ -1,0 +1,84 @@
+<div class="container-fluid">
+  <div class="route-box bg-white">
+    <div class="route-heading">
+      <span class="route-header-text">Create Meeting </span>
+    </div>
+    <div>
+      <form [formGroup]="meetingForm">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="app-form-row">
+              <label for="" class="form-prompt">Meeting Title</label>
+              <input
+                type="text"
+                class="input-text full-width"
+                placeholder="e.g Notice of meeting "
+              />
+            </div>
+            <div class="app-form-row">
+              <label for="" class="form-prompt">Venue </label>
+              <input
+                type="text"
+                class="input-text full-width"
+                placeholder="e.g Meeting room"
+              />
+            </div>
+            <div class="app-form-row">
+              <label for="" class="form-prompt">Scheduled </label>
+              <input
+                type="text"
+                class="input-text full-width"
+                placeholder="e.g Select date"
+                readonly
+                [owlDateTime]="dt1"
+                [owlDateTimeTrigger]="dt1"
+              />
+              <owl-date-time #dt1></owl-date-time>
+            </div>
+            <div class="app-form-row">
+              <label for="" class="form-prompt">Notice Message</label>
+              <angular-editor
+                formControlName="noticeMessage"
+                [config]="editorConfig"
+              ></angular-editor>
+            </div>
+            <div class="app-form-row">
+              <button class="app-button text-white bg-main">
+                Create Meeting
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <button
+              class="app-button text-white bg-main pull-right"
+              (click)="openStaffSelect()"
+            >
+              Add Participants
+            </button>
+            <div class="staff-meet-container">
+              <div *ngIf="selectedStaff.length === 0" class="empty-container">
+                <div class="center-text">
+                  <img
+                    src="assets/images/empty.svg"
+                    height="150"
+                    alt=""
+                    srcset=""
+                  />
+                  <span class="form-prompt block">Select Participants</span>
+                </div>
+              </div>
+              <div *ngIf="selectedStaff.length > 0">
+                <div class="vert-padding adjacent-item-grid">
+                  <app-single-personnel
+                    *ngFor="let person of selectedStaff"
+                    [person]="person"
+                  ></app-single-personnel>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

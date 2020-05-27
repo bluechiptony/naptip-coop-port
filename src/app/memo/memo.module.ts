@@ -11,6 +11,9 @@ import { MemoCorrespondenceComponent } from './memo-correspondence/memo-correspo
 import { RouterModule } from '@angular/router';
 import { MemoDetailsComponent } from './memo-details/memo-details.component';
 import { MemoReplyItemComponent } from './memo-reply-item/memo-reply-item.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormDependenciesModule } from '../shared/form-dependencies/form-dependencies.module';
+import { SharedComponentModule } from '../shared/shared-component/shared-component.module';
 
 @NgModule({
   declarations: [
@@ -25,8 +28,11 @@ import { MemoReplyItemComponent } from './memo-reply-item/memo-reply-item.compon
     CommonModule,
     MemoRoutingModule,
     MemoTableModule,
-    MatDependenciesModule,
+    HttpClientModule,
     RouterModule,
+    FormDependenciesModule,
+    MatDependenciesModule,
+    SharedComponentModule,
   ],
 })
 export class MemoModule {}

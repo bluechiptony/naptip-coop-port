@@ -8,7 +8,8 @@
   width: 100%;
 }
 
-.link {
+.link,
+.pointer {
   cursor: pointer;
 }
 
@@ -266,4 +267,114 @@ div.overview-content div.overview-list-box:last-child {
   display: grid;
   grid-template-columns: 60% 40%;
   gap: 20px;
+}
+
+.adjacent-item-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+}
+.adjacent-item-grid-4 {
+  @extend .adjacent-item-grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.user-pill {
+  background-color: #faf6ff;
+  max-width: 300px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 30px 200px 30px;
+  // align-items: center;
+  gap: 10px;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  border: 1px solid #16043074;
+  div.holder {
+    height: 30px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.staff-meet-container {
+  height: 400px;
+}
+
+.empty-container {
+  height: 100%;
+  width: 100%;
+  @extend .centered-flex;
+}
+
+.effect-overflow {
+  overflow: hidden;
+}
+
+.text-fade {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+//.text-fade {
+// position: relative;
+// height: 4.2rem; /* exactly three lines */
+//}
+// .text-fade:after {
+//   content: "";
+//   text-align: right;
+//   position: absolute;
+//   bottom: 0;
+//   right: 0;
+//   width: 70%;
+//   height: 1.2em;
+//   background: linear-gradient(
+//     to right,
+//     rgba(255, 255, 255, 0),
+//     rgba(255, 255, 255, 1) 50%
+//   );
+// }
+
+.notice-box {
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  border: 1px solid #16043074;
+  box-shadow: 0 0 20px 0 #16043023;
+  transition: all 0.3s ease-in-out;
+  background-color: #faf6ff;
+}
+
+.notice-box:hover {
+  box-shadow: 0 0 20px 0 #16043030;
+}
+
+.table-pill {
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+  height: 40px;
+  line-height: 0.5rem;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  &.bg-pill-green {
+    border: 1px solid #6cfa6e;
+    background-color: #adffaf;
+    color: #094b0b;
+  }
+  &.bg-pill-false {
+    border: 1px solid #f26531;
+    background-color: #ffb398;
+    color: #672913;
+  }
+  &.bg-pill-pending {
+    border: 1px solid #faeb3c;
+    background-color: #fff9bc;
+    color: #635c0e;
+  }
 }

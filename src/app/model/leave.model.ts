@@ -48,4 +48,17 @@ export const leaves: Leave[] = [
     createdDate: new Date(),
     updatedDate: new Date(),
   },
+  {
+    id: 2932,
+    leaveCode: 'LC7234',
+    leaveType: LeaveType.MATERNITY,
+    staff: staffMembers[2],
+    startDate: new Date(),
+    endDate: new Date(),
+    status: true,
+    approved: true,
+    description: 'Talk about leave',
+    createdDate: new Date(),
+    updatedDate: new Date(),
+  },
 ];

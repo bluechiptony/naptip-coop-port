@@ -4,6 +4,7 @@ import { ZonalCommand, zonalCommands } from './zonal-command.model';
 export interface Staff {
   id?: any;
   staffCode?: string;
+  fullName?: string;
   staffNumber: string;
   firstName: string;
   middlename?: string;

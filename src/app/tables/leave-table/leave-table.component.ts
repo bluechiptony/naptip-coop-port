@@ -18,6 +18,7 @@ export class LeaveTableComponent implements OnInit {
     'emailAddress',
     'phoneNumber',
     'accountType',
+    'leaveStatus',
     'menuHolder',
   ];
   userSubscription: Subscription;

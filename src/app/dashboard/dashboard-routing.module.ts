@@ -79,6 +79,26 @@ const routes: Routes = [
         loadChildren: () =>
           import('../transfer/transfer.module').then((m) => m.TransferModule),
       },
+      {
+        path: 'meetings',
+        loadChildren: () =>
+          import('../meeting/meeting.module').then((m) => m.MeetingModule),
+      },
+      {
+        path: 'reports',
+        loadChildren: () =>
+          import('../report/report.module').then((m) => m.ReportModule),
+      },
+      {
+        path: 'events',
+        loadChildren: () =>
+          import('../event/event.module').then((m) => m.EventModule),
+      },
+      {
+        path: 'notices',
+        loadChildren: () =>
+          import('../notice/notice.module').then((m) => m.NoticeModule),
+      },
     ],
   },
 ];
