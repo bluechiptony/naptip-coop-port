@@ -34,7 +34,13 @@
           <td mat-cell *matCellDef="let row" class="table-cell">
             <span
               class="table-cell-text block ellipsis"
-              [routerLink]="['/dashboard', 'staff', 'view', row.staffNumber]"
+              [routerLink]="[
+                '/dashboard',
+                'staff',
+                'view',
+                row.staffNumber,
+                'biodata'
+              ]"
               routerLinkActive="router-link-active"
             >
               {{ row.staffNumber }}

@@ -1,33 +1,58 @@
 <div class="container-fluid">
-  <div class="route-box bg-white">
-    <div class="route-heading">
-      <span class="route-header-text">Staff Name </span>
+  <div class="route-page-grid">
+    <div class="page-nav">
+      <ul class="object-nav">
+        <li
+          class="object-nav-list-item"
+          [routerLink]="['biodata']"
+          routerLinkActive="nav-active"
+        >
+          <span class="nav-text">Biodata</span>
+        </li>
+        <li
+          class="object-nav-list-item"
+          [routerLink]="['certificates']"
+          routerLinkActive="nav-active"
+        >
+          <span class="nav-text">Certificates</span>
+        </li>
+        <li
+          class="object-nav-list-item"
+          [routerLink]="['leaves']"
+          routerLinkActive="nav-active"
+        >
+          <span class="nav-text">Leaves</span>
+        </li>
+        <li
+          class="object-nav-list-item"
+          [routerLink]="['trainings']"
+          routerLinkActive="nav-active"
+        >
+          <span class="nav-text">Trainings</span>
+        </li>
+        <li
+          class="object-nav-list-item"
+          [routerLink]="['postings']"
+          routerLinkActive="nav-active"
+        >
+          <span class="nav-text">Postings</span>
+        </li>
+        <li
+          class="object-nav-list-item"
+          [routerLink]="['transfers']"
+          routerLinkActive="nav-active"
+        >
+          <span class="nav-text">Transfers</span>
+        </li>
+      </ul>
     </div>
-    <div></div>
-    <div>
-      <mat-tab-group>
-        <mat-tab label="Biodata">
-          <div class="container-fluid">
-            <app-biodata></app-biodata>
-          </div>
-        </mat-tab>
-        <mat-tab label="Qualifications"> </mat-tab>
-        <mat-tab label="Training">
-          <app-training-table></app-training-table>
-        </mat-tab>
-        <mat-tab label="Promotion">
-          <app-promotion-table></app-promotion-table>
-        </mat-tab>
-        <mat-tab label="Posting">
-          <app-posting-table></app-posting-table>
-        </mat-tab>
-        <mat-tab label="Transfer">
-          <app-transfer-table></app-transfer-table>
-        </mat-tab>
-        <mat-tab label="Leaves">
-          <app-leave-request-table></app-leave-request-table>
-        </mat-tab>
-      </mat-tab-group>
+    <div class="route-box bg-white">
+      <div class="route-heading">
+        <span class="route-header-text">Staff Name </span>
+      </div>
+      <div>
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
 </div>

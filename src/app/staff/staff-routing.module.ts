@@ -7,7 +7,13 @@ import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   { path: '', component: StaffComponent },
-  { path: 'view/:code', component: SingleStaffComponent },
+  {
+    path: 'view/:code',
+    loadChildren: () =>
+      import('./single-staff/single-staff.module').then(
+        (m) => m.SingleStaffModule
+      ),
+  },
   { path: 'settings', component: SettingsComponent },
 ];
 

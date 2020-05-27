@@ -107,7 +107,7 @@
           <td mat-cell *matCellDef="let row" class="table-cell">
             <span class="table-cell-text block ellipsis">
               <span class="table-pill" [ngClass]="{ 'bg-greeen': row.status }">
-                {row.status}
+                {{ row.status }}
               </span>
             </span>
           </td>
