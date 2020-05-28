@@ -5,6 +5,7 @@
 @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "~@ng-select/ng-select/themes/default.theme.css";
 @import "~ng-pick-datetime/assets/style/picker.min.css";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 @import "styles/bootstrap-grid.scss";
 @import "~ngx-toastr/toastr";
 @import "styles/elements.scss";
@@ -267,4 +268,17 @@ Dialog reset style
 .mat-tab-group.mat-primary .mat-ink-bar,
 .mat-tab-nav-bar.mat-primary .mat-ink-bar {
   background-color: transparent;
+}
+
+.cal-month-view .cal-cell:focus {
+  outline: none;
+}
+
+.cal-month-view .cal-day-badge {
+  background-color: $main !important;
+}
+
+.cal-month-view .cal-open-day-event {
+  background-color: $main !important;
+  color: white;
 }

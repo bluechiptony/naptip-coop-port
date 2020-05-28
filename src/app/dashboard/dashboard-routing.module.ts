@@ -99,6 +99,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('../notice/notice.module').then((m) => m.NoticeModule),
       },
+      {
+        path: 'calendar',
+        loadChildren: () =>
+          import('../calendar/calendar.module').then(
+            (m) => m.AppCalendarModule
+          ),
+      },
     ],
   },
 ];

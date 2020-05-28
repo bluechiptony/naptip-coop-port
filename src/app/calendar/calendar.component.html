@@ -1,0 +1,53 @@
+<div class="container-fluid spacer-padding route-box">
+  <div class="row">
+    <div class="col-lg-12">
+      <span class="route-header-text">Calendar</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <app-calendar-switcher
+        [(view)]="view"
+        [(viewDate)]="viewDate"
+        (viewDateChange)="fetchEventsRem()"
+        (viewChange)="fetchEventsRem()"
+      ></app-calendar-switcher>
+    </div>
+    <div class="col-lg-12">
+      <ng-template #loading>
+        <div class="text-center">
+          <i class="fa fa-spin fa-spinner fa-5x"></i> <br />
+          Loading events...
+        </div>
+      </ng-template>
+
+      <div *ngIf="events$ | async; else loading; let events">
+        <div [ngSwitch]="view">
+          <mwl-calendar-month-view
+            *ngSwitchCase="'month'"
+            [viewDate]="viewDate"
+            [events]="events"
+            [activeDayIsOpen]="activeDayIsOpen"
+            (dayClicked)="dayClicked($event.day)"
+            (eventClicked)="eventClicked($event.event)"
+          >
+          </mwl-calendar-month-view>
+          <mwl-calendar-week-view
+            *ngSwitchCase="'week'"
+            [viewDate]="viewDate"
+            [events]="events"
+            (eventClicked)="eventClicked($event.event)"
+          >
+          </mwl-calendar-week-view>
+          <mwl-calendar-day-view
+            *ngSwitchCase="'day'"
+            [viewDate]="viewDate"
+            [events]="events"
+            (eventClicked)="eventClicked($event.event)"
+          >
+          </mwl-calendar-day-view>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
