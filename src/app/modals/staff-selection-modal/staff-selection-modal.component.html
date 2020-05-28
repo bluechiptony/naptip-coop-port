@@ -1,16 +1,16 @@
 <div class="modal-padding">
-  <div>
+  <div class="">
     <span class="route-header-text">Select staff member</span>
     <span class="pull-right">
       <i class="uil uil-times-circle link-up" (click)="close()"></i>
     </span>
     <span class="clearfix"></span>
   </div>
-  <div>
-    <div class="app-form-row">
+  <div class="top-padding">
+    <div class="app-form-row two-grid">
       <ng-select
         class="block"
-        style="width: 40%;"
+        style="width: 60%;"
         placeholder="Select For staff member(s)"
         [multiple]="true"
         bindLabel="fullName"
@@ -30,6 +30,12 @@
           >
         </ng-template>
       </ng-select>
+      <button
+        class="app-button bg-main text-white pull-right"
+        (click)="finishSelection()"
+      >
+        Finish selection
+      </button>
     </div>
   </div>
   <div class="staff-meet-container">

@@ -14,6 +14,8 @@ import { MemoReplyItemComponent } from './memo-reply-item/memo-reply-item.compon
 import { HttpClientModule } from '@angular/common/http';
 import { FormDependenciesModule } from '../shared/form-dependencies/form-dependencies.module';
 import { SharedComponentModule } from '../shared/shared-component/shared-component.module';
+import { MemoResponseModalComponent } from '../modals/memo-response-modal/memo-response-modal.component';
+import { MemoResolutionModalComponent } from '../modals/memo-resolution-modal/memo-resolution-modal.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { SharedComponentModule } from '../shared/shared-component/shared-compone
     MemoCorrespondenceComponent,
     MemoDetailsComponent,
     MemoReplyItemComponent,
+    MemoResponseModalComponent,
+    MemoResolutionModalComponent,
   ],
   imports: [
     CommonModule,
@@ -34,5 +38,6 @@ import { SharedComponentModule } from '../shared/shared-component/shared-compone
     MatDependenciesModule,
     SharedComponentModule,
   ],
+  entryComponents: [MemoResolutionModalComponent, MemoResponseModalComponent],
 })
 export class MemoModule {}

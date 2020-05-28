@@ -281,6 +281,10 @@ div.overview-content div.overview-list-box:last-child {
   @extend .adjacent-item-grid;
   grid-template-columns: repeat(4, 1fr);
 }
+.adjacent-item-grid-1 {
+  @extend .adjacent-item-grid;
+  grid-template-columns: 1fr;
+}
 
 .user-pill {
   background-color: #faf6ff;
@@ -292,6 +296,7 @@ div.overview-content div.overview-list-box:last-child {
   gap: 10px;
   padding: 0.5rem;
   border-radius: 0.4rem;
+  margin-bottom: 20px;
   border: 1px solid #16043074;
   div.holder {
     height: 30px;
@@ -343,6 +348,9 @@ div.overview-content div.overview-list-box:last-child {
 
 .left-border-vertical {
   border-left: 1px solid #89898942;
+}
+.right-border-vertical {
+  border-right: 1px solid #89898942;
 }
 .notice-box {
   box-sizing: border-box;

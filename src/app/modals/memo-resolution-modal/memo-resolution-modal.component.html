@@ -1,0 +1,55 @@
+<div class="modal-padding">
+  <div>
+    <span class="route-header-text">Memo Resolution</span>
+    <span class="pull-right">
+      <i class="uil uil-times-circle link-up" (click)="close()"></i>
+    </span>
+    <span class="clearfix"></span>
+  </div>
+
+  <div>
+    <div class="app-form-row">
+      <label for="" class="form-prompt">Leave type</label>
+      <ng-select
+        class="block"
+        style="width: 100%;"
+        placeholder="Select Leave Type"
+        bindLabel="firstName"
+        [items]="staff"
+        (change)="onChange($event)"
+      >
+        <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+          <div>
+            <span> </span><span [ngOptionHighlight]="search">{{ item }}</span>
+          </div>
+          <!-- <small
+              ><b>Command:</b> {{ item.currentZone?.zoneName }} |
+              <b>Department:</b> {{ item.department?.departmentName }}</small
+            > -->
+        </ng-template>
+      </ng-select>
+    </div>
+    <div>
+      <label for="" class="form-prompt">Leave Length</label>
+      <input
+        type="text"
+        class="input-text full-width"
+        [owlDateTime]="dt1"
+        [selectMode]="'range'"
+        [owlDateTimeTrigger]="dt1"
+        placeholder="Select Leave leangth"
+      />
+      <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>
+    </div>
+
+    <div class="app-form-row">
+      <label for="" class="form-prompt">Message/description</label>
+      <angular-editor [config]="editorConfig"></angular-editor>
+    </div>
+    <div class="app-form-row">
+      <button class="app-button text-white bg-main">
+        Create Leave Request
+      </button>
+    </div>
+  </div>
+</div>

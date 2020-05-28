@@ -36,6 +36,10 @@ export class StaffSelectionModalComponent implements OnInit {
 
   sendSelectedItemsBack = (): void => {};
 
+  finishSelection = () => {
+    this.dialogRef.close(this.selectedStaff);
+  };
+
   getStaffMembers = (): void => {
     this.staffService
       .getStaffMembers()

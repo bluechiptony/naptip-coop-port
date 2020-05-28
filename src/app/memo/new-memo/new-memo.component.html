@@ -3,10 +3,10 @@
     <div class="route-heading">
       <span class="route-header-text">Create Memo </span>
     </div>
-    <div>
+    <div class="">
       <form [formGroup]="meetingForm">
         <div class="row">
-          <div class="col-lg-5">
+          <div class="col-lg-5 right-border-vertical">
             <div class="app-form-row">
               <label for="" class="form-prompt">Memo Title</label>
               <input
@@ -55,7 +55,7 @@
             >
               Add Correspondents
             </button>
-            <div class="staff-meet-container">
+            <div class="staff-meet-container col-lg-12">
               <div *ngIf="selectedStaff.length === 0" class="empty-container">
                 <div class="center-text">
                   <img
@@ -70,7 +70,7 @@
                 </div>
               </div>
               <div *ngIf="selectedStaff.length > 0">
-                <div class="vert-padding adjacent-item-grid">
+                <div class="vert-padding adjacent-item-grid-2">
                   <app-single-personnel
                     *ngFor="let person of selectedStaff"
                     [person]="person"
