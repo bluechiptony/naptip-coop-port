@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   authStateKey: 'AUTH_STATE',
+  currentStaffStateKey: 'CURRENT_STAFF_STATE',
   baseUrl: 'http://loalhost:4500',
 };
 

@@ -7,7 +7,7 @@ export interface Staff {
   fullName?: string;
   staffNumber: string;
   firstName: string;
-  middlename?: string;
+  middleName?: string;
   lastName: string;
   dob: Date;
   stateOfOrigin: string;
@@ -22,13 +22,17 @@ export interface Staff {
   designation: string;
 }
 
+export interface StaffState {
+  staff?: Staff;
+}
+
 export const staffMembers: Staff[] = [
   {
     id: '23467',
     staffCode: 'HSHA234789',
     staffNumber: 'HSD0239',
     firstName: 'James',
-    middlename: 'Gandolfi',
+    middleName: 'Gandolfi',
     lastName: 'Gandolfi',
     dob: new Date(),
     stateOfOrigin: 'Delta',
@@ -48,7 +52,7 @@ export const staffMembers: Staff[] = [
     staffCode: 'HSHA03483',
     staffNumber: 'HS09237',
     firstName: 'Sandra',
-    middlename: 'Mulan',
+    middleName: 'Mulan',
     lastName: 'Mohave',
     dob: new Date(),
     stateOfOrigin: 'Anambara',
@@ -68,7 +72,7 @@ export const staffMembers: Staff[] = [
     staffCode: 'HSHRT5346',
     staffNumber: 'HS00394',
     firstName: 'Mucharl',
-    middlename: 'Mulan',
+    middleName: 'Mulan',
     lastName: 'Dapson',
     dob: new Date(),
     stateOfOrigin: 'Rivers',
@@ -88,7 +92,7 @@ export const staffMembers: Staff[] = [
     staffCode: 'HSH03483',
     staffNumber: 'HS25327',
     firstName: 'Bimpe',
-    middlename: 'Mulan',
+    middleName: 'Mulan',
     lastName: 'Olaona',
     dob: new Date(),
     stateOfOrigin: 'Osun',

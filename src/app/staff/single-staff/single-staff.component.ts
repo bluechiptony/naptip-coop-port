@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { StaffService } from 'src/app/services/staff.service';
-import { Staff } from 'src/app/model/staff.model';
+import { Staff, StaffState } from 'src/app/model/staff.model';
+import * as StaffActions from '../../state-management/actions/staff-in-view.action';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-single-staff',
@@ -11,12 +13,23 @@ import { Staff } from 'src/app/model/staff.model';
 })
 export class SingleStaffComponent implements OnInit {
   routeSub: Subscription;
+  staffSub: Subscription;
+  staffState: StaffState;
   staff: Staff;
 
   constructor(
     private activeRoute: ActivatedRoute,
-    private staffService: StaffService
-  ) {}
+    private staffService: StaffService,
+    private store: Store<StaffState>
+  ) {
+    this.staffSub = this.store
+      .select<any>('currentStaffReducer')
+      .subscribe((state) => {
+        this.staffState = state;
+
+        console.log(state);
+      });
+  }
 
   ngOnInit(): void {
     this.createRouteSub();
@@ -34,6 +47,12 @@ export class SingleStaffComponent implements OnInit {
     this.staffService.getStaff(code).subscribe(
       (staff: Staff) => {
         this.staff = staff;
+        console.log('dispatching');
+
+        this.store.dispatch({
+          type: StaffActions.SET_STAFF,
+          staff: staff,
+        });
       },
       (error: any) => {}
     );

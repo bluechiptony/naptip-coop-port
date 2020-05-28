@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Staff } from 'src/app/model/staff.model';
+import { Staff, StaffState } from 'src/app/model/staff.model';
 import { StaffService } from 'src/app/services/staff.service';
 import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-biodata',
@@ -10,32 +11,30 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./biodata.component.scss'],
 })
 export class BiodataComponent implements OnInit {
-  routeSub: Subscription;
+  staffSub: Subscription;
+  staffState: StaffState;
   staff: Staff;
 
   constructor(
-    private activeRoute: ActivatedRoute,
-    private staffService: StaffService
-  ) {}
-
-  ngOnInit(): void {
-    this.createRouteSub();
+    private staffService: StaffService,
+    private store: Store<StaffState>
+  ) {
+    this.staffSub = this.store
+      .select<any>('currentStaffReducer')
+      .subscribe((state) => {
+        this.staffState = state;
+        if (this.staffState != null || this.staffState != undefined) {
+          this.staff = this.staffState.staff;
+        }
+      });
   }
 
-  createRouteSub = (): void => {
-    // console.log(this.activeRoute);
-
-    this.routeSub = this.activeRoute.params.subscribe((params: any) => {
-      console.log(params);
-      // this.getStaff(params.params.code);
-    });
-  };
+  ngOnInit(): void {}
 
   getStaff = (code: string): void => {
     this.staffService.getStaff(code).subscribe(
       (staff: Staff) => {
         this.staff = staff;
-        console.log(this.staff);
       },
       (error: any) => {}
     );

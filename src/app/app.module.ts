@@ -11,6 +11,7 @@ import { StoreModule } from '@ngrx/store';
 import { ToastrModule } from 'ngx-toastr';
 
 import { authenticationReducer } from './state-management/reducers/authentication.reducer';
+import { currentStaffReducer } from './state-management/reducers/staff-in-view.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { authenticationReducer } from './state-management/reducers/authenticatio
     }),
     StoreModule.forRoot({
       authenticationReducer: authenticationReducer,
+      currentStaffReducer: currentStaffReducer,
     }),
   ],
   providers: [],
