@@ -8,9 +8,10 @@ import { LeaveRequestTableComponent } from 'src/app/tables/leave-request-table/l
 import { PromotionTableModule } from 'src/app/tables/promotion-table/promotion-table.module';
 import { LeaveRequestTableModule } from 'src/app/tables/leave-request-table/leave-request-table.module';
 import { TrainingTableModule } from 'src/app/tables/training-table/training-table.module';
+import { CertificateCollectionComponent } from '../../collections/certificate-collection/certificate-collection.component';
 
 @NgModule({
-  declarations: [SingleStaffComponent, BiodataComponent],
+  declarations: [SingleStaffComponent, BiodataComponent, CertificateCollectionComponent],
   imports: [
     CommonModule,
     SingleStaffRoutingModule,
