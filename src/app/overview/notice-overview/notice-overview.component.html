@@ -2,4 +2,19 @@
   <div>
     <span class="overview-heading block">Upcoming Notices</span>
   </div>
+  <div class="overview-notice" *ngFor="let notice of notices">
+    <div class="excerpt">
+      <span class="ovr form-prompt">
+        {{ notice.title }}
+      </span>
+      <span class="subtitle ovr">
+        {{ notice.noticeDetails }}
+      </span>
+    </div>
+    <div>
+      <span class="subtitle right-text">
+        {{ notice.notableDate | date: "mediumDate" }}
+      </span>
+    </div>
+  </div>
 </div>

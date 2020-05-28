@@ -117,7 +117,7 @@ body {
 .excerpt {
   span {
     display: inline-block;
-    width: 100%;
+    // width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -127,7 +127,7 @@ body {
 }
 
 span.ovr {
-  max-width: 300px;
+  max-width: 150px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -149,7 +149,7 @@ span.ovr {
 }
 
 .mini-number-text {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   padding: 0.5rem 0;
 }

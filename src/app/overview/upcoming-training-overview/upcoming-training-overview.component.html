@@ -1,5 +1,20 @@
 <div class="container-fluid overview-box bg-white">
   <div>
-    <span class="overview-heading block">Upcoming Trainings</span>
+    <span class="overview-heading block">Upcoming Training</span>
+  </div>
+  <div class="overview-notice" *ngFor="let training of trainings">
+    <div class="excerpt">
+      <span class="ovr form-prompt">
+        {{ training.trainingTitle }}
+      </span>
+      <span class="subtitle ovr">
+        {{ training.category }}
+      </span>
+    </div>
+    <div>
+      <span class="subtitle right-text">
+        {{ training.startDate | date: "mediumDate" }}
+      </span>
+    </div>
   </div>
 </div>

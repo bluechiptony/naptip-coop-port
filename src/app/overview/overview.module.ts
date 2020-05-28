@@ -14,6 +14,9 @@ import { GrandOverviewComponent } from './grand-overview/grand-overview.componen
 import { UpcomingTrainingOverviewComponent } from './upcoming-training-overview/upcoming-training-overview.component';
 import { LeaveOverviewComponent } from './leave-overview/leave-overview.component';
 import { RouterModule } from '@angular/router';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { AdvancedPieComponent } from './charts/advanced-pie/advanced-pie.component';
+import { TransferOverviewComponent } from './transfer-overview/transfer-overview.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +30,15 @@ import { RouterModule } from '@angular/router';
     GrandOverviewComponent,
     UpcomingTrainingOverviewComponent,
     LeaveOverviewComponent,
+    AdvancedPieComponent,
+    TransferOverviewComponent,
   ],
   imports: [
     CommonModule,
     OverviewRoutingModule,
     MatDependenciesModule,
     RouterModule,
+    NgxChartsModule,
   ],
 })
 export class OverviewModule {}
