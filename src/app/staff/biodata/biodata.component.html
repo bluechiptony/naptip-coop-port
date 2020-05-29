@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <div class="biodata-container-grid">
+    <div>
+      <img src="{{ staff?.profileUrl }}" alt="" srcset="" />
+    </div>
+
+    <div class="adjacent-item-grid-4">
+      <div class="app-form-row">
+        <span class="form-prompt block">Full Name</span>
+        <span class="data-text">{{ staff?.firstName }} </span>
+      </div>
+
+      <div class="app-form-row">
+        <span class="form-prompt block">MIddle Name</span>
+        <span class="data-text"> {{ staff?.middleName }}</span>
+      </div>
+
+      <div class="app-form-row">
+        <span class="form-prompt block">Last Name</span>
+        <span class="data-text"> {{ staff?.lastName }}</span>
+      </div>
+      <span></span>
+
+      <div class="app-form-row">
+        <span class="form-prompt block">Designation </span>
+        <span class="data-text">{{ staff?.designation }}</span>
+      </div>
+      <div class="app-form-row">
+        <span class="form-prompt block">Grade </span>
+        <span class="data-text">{{ staff?.gradeLevel }}</span>
+      </div>
+      <div class="app-form-row">
+        <span class="form-prompt block">Step</span>
+        <span class="data-text">{{ staff?.step }}</span>
+      </div>
+      <div class="app-form-row">
+        <span class="form-prompt block">Zonal Command</span>
+        <span class="data-text">
+          {{ staff?.currentZone?.zoneName }}
+        </span>
+      </div>
+      <div class="app-form-row">
+        <span class="form-prompt block">Department / unit</span>
+        <span class="data-text">
+          {{ staff?.department?.departmentName }}
+        </span>
+      </div>
+
+      <div class="app-form-row">
+        <span class="form-prompt block">State of Orifin</span>
+        <span class="data-text">
+          {{ staff?.stateOfOrigin }}
+        </span>
+      </div>
+      <div class="app-form-row">
+        <span class="form-prompt block">Lga Of origin</span>
+        <span class="data-text">
+          {{ staff?.lgaOfOrigin }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

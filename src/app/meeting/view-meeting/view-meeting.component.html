@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="route-box bg-white">
+    <div class="route-heading">
+      <span class="route-header-text">{{ currentMeet?.title }} </span>
+      <button class="app-button text-white bg-main pull-right">
+        Edit this meeting
+      </button>
+      <span class="clearfix"></span>
+    </div>
+
+    <div class="meeting-content vert-padding adjacent-item-grid">
+      <div class="app-form-row">
+        <span class="form-prompt block ovr">Title</span>
+        <span class="ovr">{{ currentMeet?.title }} </span>
+      </div>
+      <div class="app-form-row">
+        <span class="form-prompt block ovr">Venue</span>
+        <span class="ovr">{{ currentMeet?.venue }} </span>
+      </div>
+      <div class="app-form-row">
+        <span class="form-prompt block ovr">Scheduled date</span>
+        <span class="ovr"
+          >{{ currentMeet?.scheduledDate | date: "mediumDate" }}
+        </span>
+      </div>
+    </div>
+
+    <div>
+      <mat-tab-group>
+        <mat-tab label="Minutes">
+          <div class="vert-padding adjacent-item-grid">
+            <app-single-personnel
+              *ngFor="let person of currentMeet?.participants"
+              [person]="person"
+            ></app-single-personnel>
+          </div>
+        </mat-tab>
+        <mat-tab label="Participants">
+          <div class="vert-padding adjacent-item-grid">
+            <app-single-personnel
+              *ngFor="let person of currentMeet?.participants"
+              [person]="person"
+            ></app-single-personnel>
+          </div>
+        </mat-tab>
+        <mat-tab label="Resolutions">
+          <!-- <app-leave-request-table></app-leave-request-table> -->
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

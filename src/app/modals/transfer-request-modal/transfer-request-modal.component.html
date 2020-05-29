@@ -1,0 +1,102 @@
+<div class="modal-padding">
+  <div>
+    <span class="route-header-text">Make Transfer request</span>
+    <span class="pull-right">
+      <i class="uil uil-times-circle link-up" (click)="close()"></i>
+    </span>
+    <span class="clearfix"></span>
+  </div>
+
+  <div>
+    <div class="app-form-row">
+      <ng-select
+        class="block"
+        style="width: 100%;"
+        placeholder="Select For staff member"
+        bindLabel="fullName"
+        [items]="staff"
+        (change)="onChange($event)"
+      >
+        <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+          <div>
+            <span> </span
+            ><span [ngOptionHighlight]="search"
+              >{{ item.firstName }} {{ item.lastName }}</span
+            >
+          </div>
+          <small
+            ><b>Command:</b> {{ item.currentZone?.zoneName }} |
+            <b>Department:</b> {{ item.department?.departmentName }}</small
+          >
+        </ng-template>
+      </ng-select>
+    </div>
+
+    <div class="app-form-row">
+      <label for="" class="form-prompt">Command</label>
+      <ng-select
+        class="block"
+        style="width: 100%;"
+        placeholder="Select Current Command"
+        bindLabel="zoneName"
+        [items]="zones"
+        (change)="onChange($event)"
+      >
+        <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+          <div>
+            <span> </span
+            ><span [ngOptionHighlight]="search">{{ item.zoneName }}</span>
+          </div>
+          <!-- <small
+              ><b>Command:</b> {{ item.currentZone?.zoneName }} |
+              <b>Department:</b> {{ item.department?.departmentName }}</small
+            > -->
+        </ng-template>
+      </ng-select>
+    </div>
+    <div class="app-form-row">
+      <label for="" class="form-prompt">Transfer Command</label>
+      <ng-select
+        class="block"
+        style="width: 100%;"
+        placeholder="Select Transfer Command"
+        bindLabel="zoneName"
+        [items]="zones"
+        (change)="onChange($event)"
+      >
+        <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+          <div>
+            <span> </span
+            ><span [ngOptionHighlight]="search">{{ item.zoneName }}</span>
+          </div>
+          <!-- <small
+              ><b>Command:</b> {{ item.currentZone?.zoneName }} |
+              <b>Department:</b> {{ item.department?.departmentName }}</small
+            > -->
+        </ng-template>
+      </ng-select>
+    </div>
+    <div>
+      <label for="" class="form-prompt">Effective Transfer Date</label>
+      <input
+        type="text"
+        class="input-text full-width"
+        readonly
+        [owlDateTime]="dt1"
+        [owlDateTimeTrigger]="dt1"
+        placeholder="Select transfer date"
+      />
+      <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>
+    </div>
+
+    <div class="app-form-row">
+      <label for="" class="form-prompt">Message/description</label>
+      <angular-editor [config]="editorConfig"></angular-editor>
+    </div>
+    <div class="app-form-row">
+      <button class="app-button text-white bg-main">
+        Create Transfer Request
+      </button>
+    </div>
+  </div>
+</div>

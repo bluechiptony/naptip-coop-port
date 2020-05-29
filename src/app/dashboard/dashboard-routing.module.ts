@@ -64,10 +64,50 @@ const routes: Routes = [
         loadChildren: () =>
           import('../staff/staff.module').then((m) => m.StaffModule),
       },
+      {
+        path: 'users',
+        loadChildren: () =>
+          import('../user/user.module').then((m) => m.UserModule),
+      },
+      {
+        path: 'activity',
+        loadChildren: () =>
+          import('../activity/activity.module').then((m) => m.ActivityModule),
+      },
+      {
+        path: 'transfers',
+        loadChildren: () =>
+          import('../transfer/transfer.module').then((m) => m.TransferModule),
+      },
+      {
+        path: 'meetings',
+        loadChildren: () =>
+          import('../meeting/meeting.module').then((m) => m.MeetingModule),
+      },
+      {
+        path: 'reports',
+        loadChildren: () =>
+          import('../report/report.module').then((m) => m.ReportModule),
+      },
+      {
+        path: 'events',
+        loadChildren: () =>
+          import('../event/event.module').then((m) => m.EventModule),
+      },
+      {
+        path: 'notices',
+        loadChildren: () =>
+          import('../notice/notice.module').then((m) => m.NoticeModule),
+      },
+      {
+        path: 'calendar',
+        loadChildren: () =>
+          import('../calendar/calendar.module').then(
+            (m) => m.AppCalendarModule
+          ),
+      },
     ],
   },
-  { path: 'users', loadChildren: () => import('../user/user.module').then(m => m.UserModule) },
-  { path: 'activity', loadChildren: () => import('../activity/activity.module').then(m => m.ActivityModule) },
 ];
 
 @NgModule({

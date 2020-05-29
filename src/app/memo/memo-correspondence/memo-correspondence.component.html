@@ -1,0 +1,21 @@
+<div class="container-fluid cor-container">
+  <div class="item-page-heading">
+    <span class="item-heading-text">Memo Correspondence</span>
+  </div>
+  <div>
+    <button
+      class="text-white bg-main reply-button pull-right"
+      matTooltip="Reply to memo"
+      (click)="openResponseModal()"
+    >
+      <i class="uil uil-comment-message"></i>
+    </button>
+    <span class="clearfix"></span>
+  </div>
+  <div>
+    <div class="app-form-row" *ngFor="let reply of replies">
+      <app-memo-reply-item [reply]="reply"></app-memo-reply-item>
+      <hr />
+    </div>
+  </div>
+</div>

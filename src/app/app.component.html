@@ -1,1 +1,10 @@
-<router-outlet></router-outlet>
+<!-- <ng-container *ngIf="loadingOutRouteConfig">
+  <div class="loader-holder"></div>
+</ng-container>
+<div *ngIf="!loadingOutRouteConfig">
+</div> -->
+
+<div>
+  <div class="loader-holder" *ngIf="loadingOutRouteConfig"></div>
+  <router-outlet></router-outlet>
+</div>

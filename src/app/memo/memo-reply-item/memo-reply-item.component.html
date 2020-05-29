@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="app-form-row">
+    <div class="memo-reply-heading text-main">
+      {{ reply.staff?.firstName }} {{ reply.staff?.lastName }}:
+    </div>
+    <div class="memo-reply-content">
+      {{ reply.reply }}
+    </div>
+    <div class="memo-reply-footer pull-right italics">
+      {{ reply.replyDate | date: "mediumDate" }} :
+      {{ reply.replyDate | date: "mediumTime" }}
+    </div>
+  </div>
+</div>

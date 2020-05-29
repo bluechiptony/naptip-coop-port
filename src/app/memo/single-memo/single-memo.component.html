@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="route-box bg-white">
+    <div class="route-heading">
+      <!-- <span class="route-header-text">Memo Page </span> -->
+      <button
+        class="app-button text-white bg-main pull-right"
+        (click)="openResponseModal()"
+      >
+        <i class="uil uil-folder-check"></i> Resolve Memo
+      </button>
+      <span class="clearfix"></span>
+    </div>
+    <div>
+      <div class="object-page-two-column-grid top-padding">
+        <app-memo-details></app-memo-details>
+        <app-memo-correspondence></app-memo-correspondence>
+      </div>
+    </div>
+  </div>
+</div>

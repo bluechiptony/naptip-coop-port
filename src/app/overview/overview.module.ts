@@ -11,6 +11,12 @@ import { StaffOverviewComponent } from './staff-overview/staff-overview.componen
 import { MatDependenciesModule } from '../shared/mat-dependencies/mat-dependencies.module';
 import { UserOverviewComponent } from './user-overview/user-overview.component';
 import { GrandOverviewComponent } from './grand-overview/grand-overview.component';
+import { UpcomingTrainingOverviewComponent } from './upcoming-training-overview/upcoming-training-overview.component';
+import { LeaveOverviewComponent } from './leave-overview/leave-overview.component';
+import { RouterModule } from '@angular/router';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { AdvancedPieComponent } from './charts/advanced-pie/advanced-pie.component';
+import { TransferOverviewComponent } from './transfer-overview/transfer-overview.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +28,17 @@ import { GrandOverviewComponent } from './grand-overview/grand-overview.componen
     StaffOverviewComponent,
     UserOverviewComponent,
     GrandOverviewComponent,
+    UpcomingTrainingOverviewComponent,
+    LeaveOverviewComponent,
+    AdvancedPieComponent,
+    TransferOverviewComponent,
   ],
-  imports: [CommonModule, OverviewRoutingModule, MatDependenciesModule],
+  imports: [
+    CommonModule,
+    OverviewRoutingModule,
+    MatDependenciesModule,
+    RouterModule,
+    NgxChartsModule,
+  ],
 })
 export class OverviewModule {}

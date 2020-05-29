@@ -1,0 +1,64 @@
+<div class="row text-center top-padding">
+  <div class="col-md-4">
+    <div class="btn-group three-button-grid center-text">
+      <div
+        class="btn btn-primary app-button bg-main text-white center-text"
+        mwlCalendarPreviousView
+        [view]="view"
+        [(viewDate)]="viewDate"
+        (viewDateChange)="viewDateChange.next(viewDate)"
+        style="text-align: center;"
+      >
+        Previous
+      </div>
+      <div
+        class="btn btn-outline-secondary app-button bg-main text-white"
+        mwlCalendarToday
+        [(viewDate)]="viewDate"
+        (viewDateChange)="viewDateChange.next(viewDate)"
+      >
+        Today
+      </div>
+      <div
+        class="btn btn-primary app-button bg-main text-white"
+        mwlCalendarNextView
+        [view]="view"
+        [(viewDate)]="viewDate"
+        (viewDateChange)="viewDateChange.next(viewDate)"
+      >
+        Next
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 center-text">
+    <h3 class="overview-heading">
+      {{ viewDate | calendarDate: view + "ViewTitle":locale }}
+    </h3>
+  </div>
+  <div class="col-md-4">
+    <div class="btn-group three-button-grid center-text">
+      <div
+        class="btn btn-primary app-button bg-main text-white center-text"
+        (click)="viewChange.emit('month')"
+        [class.active]="view === 'month'"
+      >
+        Month
+      </div>
+      <div
+        class="btn btn-primary app-button bg-main text-white"
+        (click)="viewChange.emit('week')"
+        [class.active]="view === 'week'"
+      >
+        Week
+      </div>
+      <div
+        class="btn btn-primary app-button bg-main text-white"
+        (click)="viewChange.emit('day')"
+        [class.active]="view === 'day'"
+      >
+        Day
+      </div>
+    </div>
+  </div>
+</div>
+<br />

@@ -1,0 +1,37 @@
+<div class="container-fluid notice-box">
+  <div class="right-text">
+    <i class="uil uil-ellipsis-v pointer" [matMenuTriggerFor]="userMenu"> </i>
+    <mat-menu #userMenu="matMenu" xPosition="before">
+      <span mat-menu-item>
+        Add To Calendar
+      </span>
+    </mat-menu>
+    <span class="clearfix"> </span>
+  </div>
+  <div class="center-text">
+    <i class="uil uil-bell" style="font-size: 2rem;"></i>
+  </div>
+  <div
+    class="center-text"
+    style="padding: 1rem;"
+    class="notice-heading ovr pointer"
+    [routerLink]="['/dashboard', 'notices', 'view', notice?.id]"
+  >
+    <span>
+      {{ notice?.title }}
+    </span>
+  </div>
+  <div
+    class="effect-overflow text-fade pointer"
+    [routerLink]="['/dashboard', 'notices', 'view', notice?.id]"
+  >
+    <span>
+      {{ notice?.noticeDetails }}
+    </span>
+  </div>
+  <div class="right-text">
+    <span class="subtitle">
+      {{ notice?.createdDate | date: "mediumDate" }}
+    </span>
+  </div>
+</div>

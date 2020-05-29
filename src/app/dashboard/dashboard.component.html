@@ -39,6 +39,13 @@
           >
             <span>Memos</span>
           </li>
+          <li
+            class="sub-list-item"
+            [routerLink]="['reports']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Reports</span>
+          </li>
         </ul>
       </div>
     </li>
@@ -72,10 +79,10 @@
           </li>
           <li
             class="sub-list-item"
-            [routerLink]="['organizations']"
+            [routerLink]="['transfers']"
             routerLinkActive="router-link-active"
           >
-            <span>Actions</span>
+            <span>Transfers</span>
           </li>
         </ul>
       </div>
@@ -90,21 +97,21 @@
         <ul class="sub-list">
           <li
             class="sub-list-item"
-            [routerLink]="['leave', 'list']"
+            [routerLink]="['leaves', 'requests']"
             routerLinkActive="router-link-active"
           >
             <span>Leave Requests</span>
           </li>
           <li
             class="sub-list-item"
-            [routerLink]="['leave', 'categories']"
+            [routerLink]="['leaves', 'current']"
             routerLinkActive="router-link-active"
           >
             <span>Current Leaves</span>
           </li>
           <li
             class="sub-list-item"
-            [routerLink]="['leave', 'general']"
+            [routerLink]="['leaves', 'types']"
             routerLinkActive="router-link-active"
           >
             <span>Leave Types</span>
@@ -122,21 +129,28 @@
         <ul class="sub-list">
           <li
             class="sub-list-item"
-            [routerLink]="['activity', 'list']"
+            [routerLink]="['meetings']"
+            routerLinkActive="router-link-active"
+          >
+            <span>Meetings</span>
+          </li>
+          <li
+            class="sub-list-item"
+            [routerLink]="['notices']"
             routerLinkActive="router-link-active"
           >
             <span>Notices</span>
           </li>
           <li
             class="sub-list-item"
-            [routerLink]="['activity', 'categories']"
+            [routerLink]="['events']"
             routerLinkActive="router-link-active"
           >
             <span>Events</span>
           </li>
           <li
             class="sub-list-item"
-            [routerLink]="['activity', 'general']"
+            [routerLink]="['calendar']"
             routerLinkActive="router-link-active"
           >
             <span>Calendar</span>
@@ -161,7 +175,7 @@
           </li>
           <li
             class="sub-list-item"
-            [routerLink]="['suspects']"
+            [routerLink]="['staff', 'settings']"
             routerLinkActive="router-link-active"
           >
             <span>Staff settings</span>
@@ -229,7 +243,7 @@
       </span>
     </div>
   </div>
-  <div class="top-padding router-padding">
+  <div class="vert-padding router-padding">
     <router-outlet></router-outlet>
   </div>
 </main>

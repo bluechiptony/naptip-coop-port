@@ -10,6 +10,10 @@ body {
   color: #4f4f4f;
 }
 
+.italics {
+  font-style: italic;
+}
+
 .center-text {
   text-align: center;
 }
@@ -38,6 +42,16 @@ body {
   font-weight: 600;
   font-size: 1.1rem;
 }
+.overview-heading {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 1rem 0;
+}
+.item-heading-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
 
 .subtitle {
   font-size: 0.7rem;
@@ -52,7 +66,7 @@ body {
 .form-prompt {
   font-size: 0.9rem;
   font-weight: 600;
-  color: $lightGreenText;
+  color: lighten($color: $main, $amount: 20);
 }
 
 .form-icon {
@@ -103,7 +117,7 @@ body {
 .excerpt {
   span {
     display: inline-block;
-    width: 100%;
+    // width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -113,7 +127,7 @@ body {
 }
 
 span.ovr {
-  max-width: 300px;
+  max-width: 150px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -129,13 +143,13 @@ span.ovr {
 }
 
 .mega-number-text {
-  font-size: 5rem;
+  font-size: 3.5rem;
   font-weight: bold;
   padding: 0.5rem 0;
 }
 
 .mini-number-text {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   padding: 0.5rem 0;
 }

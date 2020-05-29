@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  authStateKey: 'AUTH_STATE',
+  currentStaffStateKey: 'CURRENT_STAFF_STATE',
+  baseUrl: 'http://loalhost:4500',
 };
 
 /*
