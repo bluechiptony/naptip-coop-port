@@ -16,3 +16,7 @@
   @extend.grid;
   grid-template-columns: repeat(4, 1fr);
 }
+
+.auto-grid-height {
+  grid-auto-rows: 1fr;
+}

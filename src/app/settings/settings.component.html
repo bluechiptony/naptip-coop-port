@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="route-page-grid">
+    <div class="page-nav">
+      <ul class="object-nav">
+        <li
+          class="object-nav-list-item"
+          [routerLink]="['organization']"
+          routerLinkActive="nav-active"
+        >
+          <span class="nav-text">Organization</span>
+        </li>
+        <li
+          class="object-nav-list-item"
+          [routerLink]="['departments']"
+          routerLinkActive="nav-active"
+        >
+          <span class="nav-text">Department</span>
+        </li>
+        <li
+          class="object-nav-list-item"
+          [routerLink]="['leaves']"
+          routerLinkActive="nav-active"
+        >
+          <span class="nav-text">Leaves</span>
+        </li>
+        <li
+          class="object-nav-list-item"
+          [routerLink]="['staff']"
+          routerLinkActive="nav-active"
+        >
+          <span class="nav-text">Staff Setup</span>
+        </li>
+        <li
+          class="object-nav-list-item"
+          [routerLink]="['directives']"
+          routerLinkActive="nav-active"
+        >
+          <span class="nav-text">Responsibilities</span>
+        </li>
+      </ul>
+    </div>
+    <div class="route-box-aux bg-white">
+      <div class="route-heading">
+        <span class="route-header-text">Settings</span>
+      </div>
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

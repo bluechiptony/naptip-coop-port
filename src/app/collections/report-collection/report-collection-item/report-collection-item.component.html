@@ -1,0 +1,37 @@
+<div class="container-fluid notice-box">
+  <div class="right-text">
+    <i class="uil uil-ellipsis-v pointer" [matMenuTriggerFor]="userMenu"> </i>
+    <mat-menu #userMenu="matMenu" xPosition="before">
+      <span mat-menu-item>
+        Add To Calendar
+      </span>
+    </mat-menu>
+    <span class="clearfix"> </span>
+  </div>
+  <div class="center-text">
+    <i class="uil uil-file-edit-alt" style="font-size: 3rem;"></i>
+  </div>
+  <div
+    class="center-text"
+    style="padding: 1rem;"
+    class="notice-heading ovr pointer"
+    [routerLink]="['/dashboard', 'reports', 'view', report?.id]"
+  >
+    <span class="">
+      {{ report?.title }}
+    </span>
+  </div>
+  <div
+    class="effect-overflow text-fade pointer"
+    [routerLink]="['/dashboard', 'reports', 'view', report?.id]"
+  >
+    <span>
+      {{ report?.reportBody }}
+    </span>
+  </div>
+  <div class="right-text">
+    <span class="subtitle">
+      {{ report?.createdDate | date: "mediumDate" }}
+    </span>
+  </div>
+</div>

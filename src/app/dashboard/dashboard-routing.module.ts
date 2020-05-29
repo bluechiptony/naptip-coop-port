@@ -106,6 +106,11 @@ const routes: Routes = [
             (m) => m.AppCalendarModule
           ),
       },
+      {
+        path: 'settings',
+        loadChildren: () =>
+          import('../settings/settings.module').then((m) => m.SettingsModule),
+      },
     ],
   },
 ];

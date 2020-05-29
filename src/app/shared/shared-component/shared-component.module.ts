@@ -10,6 +10,8 @@ import { PostingRequestModalComponent } from 'src/app/modals/posting-request-mod
 import { TransferRequestModalComponent } from 'src/app/modals/transfer-request-modal/transfer-request-modal.component';
 import { PromotionRequestModalComponent } from 'src/app/modals/promotion-request-modal/promotion-request-modal.component';
 import { MatDependenciesModule } from '../mat-dependencies/mat-dependencies.module';
+import { LeaveTypeCollectionComponent } from '../../collections/leave-type-collection/leave-type-collection.component';
+import { LeaveTypeItemComponent } from '../../collections/leave-type-collection/leave-type-item/leave-type-item.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { MatDependenciesModule } from '../mat-dependencies/mat-dependencies.modu
     PostingRequestModalComponent,
     TransferRequestModalComponent,
     PromotionRequestModalComponent,
+    LeaveTypeCollectionComponent,
+    LeaveTypeItemComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +36,8 @@ import { MatDependenciesModule } from '../mat-dependencies/mat-dependencies.modu
     PostingRequestModalComponent,
     TransferRequestModalComponent,
     PromotionRequestModalComponent,
+    LeaveTypeCollectionComponent,
+    LeaveTypeItemComponent,
   ],
 })
 export class SharedComponentModule {}

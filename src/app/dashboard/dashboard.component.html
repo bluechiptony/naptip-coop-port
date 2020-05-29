@@ -102,13 +102,13 @@
           >
             <span>Leave Requests</span>
           </li>
-          <li
+          <!-- <li
             class="sub-list-item"
             [routerLink]="['leaves', 'current']"
             routerLinkActive="router-link-active"
           >
             <span>Current Leaves</span>
-          </li>
+          </li> -->
           <li
             class="sub-list-item"
             [routerLink]="['leaves', 'types']"
@@ -216,6 +216,16 @@
             <span>User Accounts</span>
           </li>
         </ul>
+      </div>
+    </li>
+    <li
+      class="nav-item"
+      [routerLink]="['settings/organization']"
+      routerLinkActive="router-link-active"
+    >
+      <div class="list-menu">
+        <i class="uil uil-sliders-v-alt"></i>
+        <span class="nav-text">Settings</span>
       </div>
     </li>
     <li class="nav-item" (click)="logOut()">

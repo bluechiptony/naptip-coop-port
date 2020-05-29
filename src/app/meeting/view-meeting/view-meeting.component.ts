@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MeetingService } from 'src/app/services/meeting.service';
 import { Meeting } from 'src/app/model/meeting.model';
+import { Report, reports } from 'src/app/model/report.model';
 
 @Component({
   selector: 'app-view-meeting',
@@ -12,6 +13,8 @@ import { Meeting } from 'src/app/model/meeting.model';
 export class ViewMeetingComponent implements OnInit {
   routeSub: Subscription;
   currentMeet: Meeting;
+
+  reports: Report[] = [reports[0]];
 
   constructor(
     private activeRoute: ActivatedRoute,
