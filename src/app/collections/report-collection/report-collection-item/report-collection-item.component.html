@@ -14,8 +14,8 @@
   <div
     class="center-text"
     style="padding: 1rem;"
-    class="notice-heading ovr pointer"
-    [routerLink]="['/dashboard', 'reports', 'view', report?.id]"
+    class="notice-heading ellipse-overflow center-text pointer"
+    [routerLink]="['/dashboard', 'reports', 'view', report?.reportCode]"
   >
     <span class="">
       {{ report?.title }}
@@ -23,7 +23,7 @@
   </div>
   <div
     class="effect-overflow text-fade pointer"
-    [routerLink]="['/dashboard', 'reports', 'view', report?.id]"
+    [routerLink]="['/dashboard', 'reports', 'view', report?.reportCode]"
   >
     <span>
       {{ report?.reportBody }}

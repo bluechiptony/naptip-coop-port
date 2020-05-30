@@ -11,9 +11,10 @@ import { FormDependenciesModule } from '../shared/form-dependencies/form-depende
 import { ReportCollectionModule } from '../collections/report-collection/report-collection.module';
 import { NewReportComponent } from './new-report/new-report.component';
 import { SharedComponentModule } from '../shared/shared-component/shared-component.module';
+import { SingleReportComponent } from './single-report/single-report.component';
 
 @NgModule({
-  declarations: [ReportComponent, NewReportComponent],
+  declarations: [ReportComponent, NewReportComponent, SingleReportComponent],
   imports: [
     CommonModule,
     ReportRoutingModule,
