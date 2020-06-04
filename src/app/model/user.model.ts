@@ -15,23 +15,23 @@ export enum AccountTypes {
 
 export const users: User[] = [
   {
-    id: 723467,
+    id: '723467',
     firstName: 'Julie',
     lastName: 'Okah-Donli',
     emailAddress: 'admin@admin.com',
     accountType: AccountTypes.ADMINISTRATOR,
   },
   {
-    id: 837438,
+    id: '23467',
     firstName: 'James',
     lastName: 'Ogebe',
     emailAddress: 'supervisor@admin.com',
     accountType: AccountTypes.SUPERVISOR,
   },
   {
-    id: 82347,
-    firstName: 'Rita',
-    lastName: 'Okon',
+    id: '83967',
+    firstName: 'Sandra',
+    lastName: 'Mohave',
     emailAddress: 'staff@admin.com',
     accountType: AccountTypes.STAFF,
   },

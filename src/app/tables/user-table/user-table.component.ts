@@ -5,6 +5,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { StaffService } from 'src/app/services/staff.service';
 import { MatSort } from '@angular/material/sort';
 import { Staff } from 'src/app/model/staff.model';
+import { MatDialog } from '@angular/material/dialog';
+import { UserModalComponent } from 'src/app/modals/user-modal/user-modal.component';
 
 @Component({
   selector: 'app-user-table',
@@ -30,7 +32,7 @@ export class UserTableComponent implements OnInit {
   hasError: boolean;
   errorMessage: string;
 
-  constructor(private staff: StaffService) {}
+  constructor(private staff: StaffService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.prepTableResources();
@@ -82,5 +84,11 @@ export class UserTableComponent implements OnInit {
       this.dataSource.data.push(user);
     });
     this.dataSource.paginator = this.paginator;
+  };
+
+  openUserModal = (): void => {
+    this.dialog.open(UserModalComponent, {
+      width: '500px',
+    });
   };
 }
