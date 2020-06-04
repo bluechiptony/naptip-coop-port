@@ -17,6 +17,8 @@ export class AdminDashboardComponent implements OnInit {
   authState: any = {
     loggedIn: true,
   };
+
+  menus: Menu[] = [];
   authSubScription: Subscription;
   loggedInUser: User;
 
@@ -36,4 +38,21 @@ export class AdminDashboardComponent implements OnInit {
     // this.store.dispatch({ type: AuthActions.LOGOUT_USER });
     this.router.navigate(['']);
   }
+
+  toggle(i) {}
 }
+
+export type Menu = {
+  name: string;
+  iconClass: string;
+  active: boolean;
+  routerLink?: any[];
+  submenu: { name: string; url: string; routerLink?: [] }[];
+};
+
+export type Config = {
+  // selector?: String,
+  multi?: boolean;
+};
+
+export const menus: Menu[] = [];

@@ -1,0 +1,36 @@
+<div class="container-fluid notice-box full-width">
+  <div class="right-text">
+    <i class="uil uil-ellipsis-v pointer" [matMenuTriggerFor]="userMenu"> </i>
+    <mat-menu #userMenu="matMenu" xPosition="before">
+      <span mat-menu-item>
+        Add To Calendar
+      </span>
+    </mat-menu>
+    <span class="clearfix"> </span>
+  </div>
+  <div class="center-text">
+    <i class="uil uil-newspaper" style="font-size: 2rem;"></i>
+  </div>
+  <div
+    style="padding: 1rem;"
+    class="notice-heading ellipse-overflow center-text pointer"
+    [routerLink]="['/dashboard', 'notices', 'view', certificate?.id]"
+  >
+    <span>
+      {{ certificate?.title }}
+    </span>
+  </div>
+  <div
+    class="effect-overflow text-fade pointer"
+    [routerLink]="['/dashboard', 'certificates', 'view', certificate?.id]"
+  >
+    <span>
+      {{ certificate?.category }}
+    </span>
+  </div>
+  <div class="right-text">
+    <span class="subtitle">
+      {{ certificate?.date | date: "mediumDate" }}
+    </span>
+  </div>
+</div>

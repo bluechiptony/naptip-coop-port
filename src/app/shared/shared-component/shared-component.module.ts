@@ -15,6 +15,8 @@ import { LeaveTypeItemComponent } from '../../collections/leave-type-collection/
 import { StaffCollectionComponent } from '../../collections/staff-collection/staff-collection.component';
 import { StaffCollectionItemComponent } from '../../collections/staff-collection/staff-collection-item/staff-collection-item.component';
 import { RouterModule } from '@angular/router';
+import { CertificateCollectionComponent } from 'src/app/collections/certificate-collection/certificate-collection.component';
+import { CertificateCollectionItemComponent } from 'src/app/collections/certificate-collection/certificate-collection-item/certificate-collection-item.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { RouterModule } from '@angular/router';
     LeaveTypeItemComponent,
     StaffCollectionComponent,
     StaffCollectionItemComponent,
+    CertificateCollectionComponent,
+    CertificateCollectionItemComponent,
   ],
   imports: [
     CommonModule,
@@ -46,6 +50,8 @@ import { RouterModule } from '@angular/router';
     LeaveTypeItemComponent,
     StaffCollectionComponent,
     StaffCollectionItemComponent,
+    CertificateCollectionComponent,
+    CertificateCollectionItemComponent,
   ],
 })
 export class SharedComponentModule {}

@@ -1,16 +1,16 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Staff } from '../model/staff.model';
+import { Component, OnInit } from '@angular/core';
+import { Staff } from 'src/app/model/staff.model';
+import { AuthenticationState } from 'src/app/model/authentication.model';
 import { Store } from '@ngrx/store';
-import { AuthenticationState } from '../model/authentication.model';
-import { StaffService } from '../services/staff.service';
 import { Subscription } from 'rxjs';
+import { StaffService } from 'src/app/services/staff.service';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss'],
+  selector: 'app-employment-profile',
+  templateUrl: './employment-profile.component.html',
+  styleUrls: ['./employment-profile.component.scss'],
 })
-export class ProfileComponent implements OnInit, OnDestroy {
+export class EmploymentProfileComponent implements OnInit {
   staff: Staff;
   authSubscription: Subscription;
   constructor(
@@ -31,8 +31,6 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.authSubscription = this.authStore
       .select<any>('authenticationReducer')
       .subscribe((data: AuthenticationState) => {
-        console.log(data);
-
         if (data.loggedIn) {
           this.getStaffDetails(data.user.id);
         }

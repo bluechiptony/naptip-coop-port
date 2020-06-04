@@ -274,12 +274,12 @@ div.overview-content div.overview-list-box:last-child {
 .adjacent-item-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 30px;
 }
 .adjacent-item-grid-4 {
   @extend .adjacent-item-grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .adjacent-item-grid-1 {
   @extend .adjacent-item-grid;
@@ -327,6 +327,13 @@ div.overview-content div.overview-list-box:last-child {
   -webkit-box-orient: vertical;
 }
 
+.ellipse-overflow {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 //.text-fade {
 // position: relative;
 // height: 4.2rem; /* exactly three lines */
@@ -361,9 +368,24 @@ div.overview-content div.overview-list-box:last-child {
   transition: all 0.3s ease-in-out;
   background-color: #faf6ff;
 }
-
 .notice-box:hover {
   box-shadow: 0 0 20px 0 #16043030;
+}
+.addition-box {
+  box-sizing: border-box;
+  padding: 2rem;
+
+  border-radius: 0.4rem;
+  border: 1px dashed #16043074;
+  // box-shadow: 0 0 20px 0 #16043023;
+  transition: all 0.3s ease-in-out;
+  background-color: #faf6ff;
+}
+
+.addition-box:hover {
+  // box-shadow: 0 0 20px 0 #16043030;
+  border: 1px dashed #26065274;
+  background-color: #ede3fa;
 }
 
 .table-pill {

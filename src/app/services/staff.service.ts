@@ -22,4 +22,10 @@ export class StaffService {
     });
     return ogs;
   };
+  getStaffWithId = (id: string): Observable<Staff> => {
+    var ogs = Observable.create((observer) => {
+      observer.next(staffMembers.find((staff) => staff.id === id));
+    });
+    return ogs;
+  };
 }

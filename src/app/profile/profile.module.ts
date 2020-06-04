@@ -6,9 +6,21 @@ import { ProfileComponent } from './profile.component';
 import { BiodataComponent } from './biodata/biodata.component';
 import { CertificationsComponent } from './certifications/certifications.component';
 import { SharedComponentModule } from '../shared/shared-component/shared-component.module';
+import { EmploymentProfileComponent } from './employment-profile/employment-profile.component';
+import { FormDependenciesModule } from '../shared/form-dependencies/form-dependencies.module';
 
 @NgModule({
-  declarations: [ProfileComponent, BiodataComponent, CertificationsComponent],
-  imports: [CommonModule, ProfileRoutingModule, SharedComponentModule],
+  declarations: [
+    ProfileComponent,
+    BiodataComponent,
+    CertificationsComponent,
+    EmploymentProfileComponent,
+  ],
+  imports: [
+    CommonModule,
+    ProfileRoutingModule,
+    SharedComponentModule,
+    FormDependenciesModule,
+  ],
 })
 export class ProfileModule {}
