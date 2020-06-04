@@ -29,9 +29,17 @@ export class NewTrainingComponent implements OnInit {
   };
 
   openStaffSelect = (): void => {
-    this.dialog.open(StaffSelectionModalComponent, {
-      width: '70%',
-    });
+    this.dialog
+      .open(StaffSelectionModalComponent, {
+        width: '70%',
+      })
+      .afterClosed()
+      .subscribe((data) => {
+        if (data != null || data != undefined) {
+          console.log(data);
+          this.selectedStaff = [...this.selectedStaff, ...data];
+        }
+      });
   };
 
   get noticeMessage() {

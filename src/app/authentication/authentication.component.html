@@ -7,10 +7,20 @@
     </div>
     <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
       <div class="app-form-row">
-        <input type="text" placeholder="Email address" class="input-text" />
+        <input
+          type="text"
+          formControlName="emailAddress"
+          placeholder="Email address"
+          class="input-text"
+        />
       </div>
       <div class="app-form-row">
-        <input type="password" placeholder="Password" class="input-text" />
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Password"
+          class="input-text"
+        />
       </div>
       <div class="app-form-row right-text">
         <span class="subtitle"
@@ -21,12 +31,7 @@
         </span>
       </div>
       <div class="app-form-row">
-        <button
-          type="submit"
-          class="app-button full-width text-white bg-main"
-          [routerLink]="['dashboard']"
-          routerLinkActive="router-link-active"
-        >
+        <button type="submit" class="app-button full-width text-white bg-main">
           Login
         </button>
       </div>

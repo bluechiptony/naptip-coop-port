@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationState } from '../model/authentication.model';
-import { User } from '../model/user.model';
+import { User, users } from '../model/user.model';
 import * as jwtDecode from 'jwt-decode';
 import { Subscription } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Store } from '@ngrx/store';
+import { ToastrService } from 'ngx-toastr';
 @Injectable({
   providedIn: 'root',
 })
@@ -14,7 +15,8 @@ export class AuthenticationService {
   authSubscription: Subscription;
   constructor(
     private http: HttpClient,
-    private store: Store<AuthenticationState>
+    private store: Store<AuthenticationState>,
+    private toast: ToastrService
   ) {}
 
   /**
@@ -47,5 +49,19 @@ export class AuthenticationService {
       this.authSubscription.unsubscribe();
     }
     return token;
+  };
+
+  makeLoginAttempt = (email: string): User => {
+    return users.find((user) => user.emailAddress === email);
+  };
+
+  public showError = (message: string) => {
+    this.toast.error(message, 'Sorry something went wrong');
+  };
+  showSuccess = (message: string) => {
+    this.toast.success(message, 'Process Successful');
+  };
+  showWarning = (message: string) => {
+    this.toast.warning(message);
   };
 }

@@ -12,6 +12,9 @@ import { PromotionRequestModalComponent } from 'src/app/modals/promotion-request
 import { MatDependenciesModule } from '../mat-dependencies/mat-dependencies.module';
 import { LeaveTypeCollectionComponent } from '../../collections/leave-type-collection/leave-type-collection.component';
 import { LeaveTypeItemComponent } from '../../collections/leave-type-collection/leave-type-item/leave-type-item.component';
+import { StaffCollectionComponent } from '../../collections/staff-collection/staff-collection.component';
+import { StaffCollectionItemComponent } from '../../collections/staff-collection/staff-collection-item/staff-collection-item.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,8 @@ import { LeaveTypeItemComponent } from '../../collections/leave-type-collection/
     PromotionRequestModalComponent,
     LeaveTypeCollectionComponent,
     LeaveTypeItemComponent,
+    StaffCollectionComponent,
+    StaffCollectionItemComponent,
   ],
   imports: [
     CommonModule,
@@ -29,6 +34,7 @@ import { LeaveTypeItemComponent } from '../../collections/leave-type-collection/
     MatDependenciesModule,
     NgOptionHighlightModule,
     NgSelectModule,
+    RouterModule,
   ],
   exports: [
     SinglePersonnelComponent,
@@ -38,6 +44,8 @@ import { LeaveTypeItemComponent } from '../../collections/leave-type-collection/
     PromotionRequestModalComponent,
     LeaveTypeCollectionComponent,
     LeaveTypeItemComponent,
+    StaffCollectionComponent,
+    StaffCollectionItemComponent,
   ],
 })
 export class SharedComponentModule {}

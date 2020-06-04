@@ -28,6 +28,26 @@ export interface StaffState {
 
 export const staffMembers: Staff[] = [
   {
+    id: '723467',
+    staffCode: 'HSHA2347789',
+    staffNumber: 'HSD02939',
+    firstName: 'Julie',
+    middleName: 'Gandolfi',
+    lastName: 'Okah-Donli',
+    dob: new Date(),
+    stateOfOrigin: 'Delta',
+    lgaOfOrigin: 'Asaba',
+    dateEnrolled: new Date(),
+    department: departments[5],
+    gender: 'FEMALE',
+    currentZone: zonalCommands[3],
+    profileUrl:
+      'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200',
+    gradeLevel: '12',
+    step: '7',
+    designation: 'Administrative Office',
+  },
+  {
     id: '23467',
     staffCode: 'HSHA234789',
     staffNumber: 'HSD0239',

@@ -1,0 +1,130 @@
+<div class="container-fluid">
+  <div class="vert-padding">
+    <span class="route-heading"
+      >Welcome {{ user?.firstName }}, Please select what you want to do</span
+    >
+    <span class="pull-right link-up bold" [matMenuTriggerFor]="userMenu">
+      <span>{{ user?.firstName }} {{ user?.lastName }}</span>
+      <i class="uil uil-user-circle"></i>
+    </span>
+
+    <mat-menu #userMenu="matMenu" xPosition="before">
+      <span mat-menu-item (click)="logOut()">
+        Logout
+      </span>
+    </mat-menu>
+  </div>
+  <div class="home-grid vert-padding">
+    <div class="item-box overview-box bg-main text-white">
+      <div>
+        <span class="notice-heading block">Administration</span>
+        <span class="block subtitle"
+          >Here, wou will be able to manage administrative affairs</span
+        >
+        <hr />
+      </div>
+      <div class="vert-padding">
+        <li>
+          <span class="block form-prompt text-white">Memos</span>
+          <span class="block subtitle">Create, receieve, track memos</span>
+        </li>
+        <li>
+          <span class="block form-prompt text-white">Events</span>
+          <span class="block subtitle"
+            >Keep track of organiozational events and occurencies</span
+          >
+        </li>
+        <li>
+          <span class="block form-prompt text-white">Notices</span>
+          <span class="block subtitle">Organise notices</span>
+        </li>
+
+        <hr />
+      </div>
+      <div>
+        <button
+          class="app-button bg-white text-main uppercase pull-right"
+          (click)="openContext('ADMINISTRATION')"
+        >
+          Administration
+        </button>
+      </div>
+    </div>
+    <div class="item-box overview-box bg-hr text-white">
+      <div>
+        <span class="notice-heading block">Human Resources</span>
+        <span class="block subtitle"
+          >Here, wou will be able to manage staff related matters</span
+        >
+        <hr />
+      </div>
+      <div class="vert-padding">
+        <li>
+          <span class="block form-prompt text-white">Staff list</span>
+          <span class="block subtitle"
+            >Manage staff members and staff profiles</span
+          >
+        </li>
+        <li>
+          <span class="block form-prompt text-white">Leave Management</span>
+          <span class="block subtitle"
+            >Keep track of leave requests and holidays</span
+          >
+        </li>
+        <li>
+          <span class="block form-prompt text-white">Promotions</span>
+          <span class="block subtitle"
+            >Staff promotion information managemnt</span
+          >
+        </li>
+
+        <hr />
+      </div>
+      <div>
+        <button
+          class="app-button bg-white text-main uppercase pull-right"
+          (click)="openContext('HUMAN_RESOURCES')"
+        >
+          Human Resources
+        </button>
+      </div>
+    </div>
+    <div class="item-box overview-box bg-operations text-white">
+      <div>
+        <span class="notice-heading block">Operations</span>
+        <span class="block subtitle"
+          >Here, wou will be able to manage staff related matters</span
+        >
+        <hr />
+      </div>
+      <div class="vert-padding">
+        <li>
+          <span class="block form-prompt text-white">Assets</span>
+          <span class="block subtitle"
+            >Manage Organization asset movement
+          </span>
+        </li>
+        <li>
+          <span class="block form-prompt text-white">Inventory</span>
+          <span class="block subtitle">Keep track of organizational </span>
+        </li>
+        <li>
+          <span class="block form-prompt text-white">Promotions</span>
+          <span class="block subtitle"
+            >Staff promotion information managemnt</span
+          >
+        </li>
+
+        <hr />
+      </div>
+      <div>
+        <button
+          class="app-button bg-white text-main uppercase pull-right"
+          (click)="openContext('OPERATIONS')"
+        >
+          Operations
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
