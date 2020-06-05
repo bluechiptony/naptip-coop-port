@@ -1,1 +1,55 @@
-<p>hr-dashboard works!</p>
+<nav [ngClass]="{ 'navbar-open': drawerOpen, navbar: !drawerOpen }">
+  <div class="app-form-row"></div>
+  <div class="menu">
+    <li class="item">
+      <span class="btn">
+        <i class="uil uil-create-dashboard"></i>Dashboard</span
+      >
+      <div class="smenu"></div>
+    </li>
+    <li class="item">
+      <span class="btn" id="admin">
+        <i class="uil uil-folder-open"></i>Administration</span
+      >
+      <div class="smenu">
+        <span class="smenu-item">Memos</span>
+        <span class="smenu-item">Reports</span>
+      </div>
+    </li>
+    <li class="item" id="carrer">
+      <a href="#carrer" onclick="return false;">
+        <span class="btn"><i class="uil uil-transaction"></i> Carrer</span>
+      </a>
+      <div class="smenu">
+        <span class="smenu-item">Leaves</span>
+        <span class="smenu-item">Promotions</span>
+        <span class="smenu-item">Transfers</span>
+        <span class="smenu-item">Postings</span>
+      </div>
+    </li>
+    <li class="item">
+      <span class="btn"> <i class="uil uil-create-dashboard"></i>Logout</span>
+    </li>
+  </div>
+</nav>
+<main
+  class="bg-backdrop full-page-height router-bg"
+  [ngClass]="{ 'main-content-open': drawerOpen, 'main-content': !drawerOpen }"
+>
+  <div class="container-fluid top-bar bg-white">
+    <div class="">
+      <i class="uil uil-list-ul link-up" (click)="toggleDrawer()"></i>
+      &nbsp;
+      <img src="assets/images/cropped-logo.jpg" alt="" srcset="" height="30" />
+      <span class="pull-right profile-name link-up" *ngIf="authState?.loggedIn"
+        ><span
+          >{{ loggedInUser?.firstName }} {{ loggedInUser?.lastName }}
+        </span>
+        <span><i class="uil uil-user-circle profile-name"></i></span>
+      </span>
+    </div>
+  </div>
+  <div class="vert-padding router-padding">
+    <router-outlet></router-outlet>
+  </div>
+</main>
