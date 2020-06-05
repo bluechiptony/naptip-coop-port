@@ -13,6 +13,7 @@ import { LeaveRequestModalComponent } from '../modals/leave-request-modal/leave-
 import { FormDependenciesModule } from '../shared/form-dependencies/form-dependencies.module';
 import { MatDependenciesModule } from '../shared/mat-dependencies/mat-dependencies.module';
 import { SharedComponentModule } from '../shared/shared-component/shared-component.module';
+import { LeaveTypeModalComponent } from '../modals/leave-type-modal/leave-type-modal.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SharedComponentModule } from '../shared/shared-component/shared-compone
     LeaveTypesComponent,
     NewRequestComponent,
     LeaveRequestModalComponent,
+    LeaveTypeModalComponent,
   ],
   imports: [
     CommonModule,
@@ -31,6 +33,6 @@ import { SharedComponentModule } from '../shared/shared-component/shared-compone
     MatDependenciesModule,
     SharedComponentModule,
   ],
-  entryComponents: [LeaveRequestModalComponent],
+  entryComponents: [LeaveRequestModalComponent, LeaveTypeModalComponent],
 })
 export class LeaveModule {}

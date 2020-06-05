@@ -10,6 +10,13 @@ import { PostingRequestModalComponent } from 'src/app/modals/posting-request-mod
 import { TransferRequestModalComponent } from 'src/app/modals/transfer-request-modal/transfer-request-modal.component';
 import { PromotionRequestModalComponent } from 'src/app/modals/promotion-request-modal/promotion-request-modal.component';
 import { MatDependenciesModule } from '../mat-dependencies/mat-dependencies.module';
+import { LeaveTypeCollectionComponent } from '../../collections/leave-type-collection/leave-type-collection.component';
+import { LeaveTypeItemComponent } from '../../collections/leave-type-collection/leave-type-item/leave-type-item.component';
+import { StaffCollectionComponent } from '../../collections/staff-collection/staff-collection.component';
+import { StaffCollectionItemComponent } from '../../collections/staff-collection/staff-collection-item/staff-collection-item.component';
+import { RouterModule } from '@angular/router';
+import { CertificateCollectionComponent } from 'src/app/collections/certificate-collection/certificate-collection.component';
+import { CertificateCollectionItemComponent } from 'src/app/collections/certificate-collection/certificate-collection-item/certificate-collection-item.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +25,12 @@ import { MatDependenciesModule } from '../mat-dependencies/mat-dependencies.modu
     PostingRequestModalComponent,
     TransferRequestModalComponent,
     PromotionRequestModalComponent,
+    LeaveTypeCollectionComponent,
+    LeaveTypeItemComponent,
+    StaffCollectionComponent,
+    StaffCollectionItemComponent,
+    CertificateCollectionComponent,
+    CertificateCollectionItemComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +38,7 @@ import { MatDependenciesModule } from '../mat-dependencies/mat-dependencies.modu
     MatDependenciesModule,
     NgOptionHighlightModule,
     NgSelectModule,
+    RouterModule,
   ],
   exports: [
     SinglePersonnelComponent,
@@ -32,6 +46,12 @@ import { MatDependenciesModule } from '../mat-dependencies/mat-dependencies.modu
     PostingRequestModalComponent,
     TransferRequestModalComponent,
     PromotionRequestModalComponent,
+    LeaveTypeCollectionComponent,
+    LeaveTypeItemComponent,
+    StaffCollectionComponent,
+    StaffCollectionItemComponent,
+    CertificateCollectionComponent,
+    CertificateCollectionItemComponent,
   ],
 })
 export class SharedComponentModule {}

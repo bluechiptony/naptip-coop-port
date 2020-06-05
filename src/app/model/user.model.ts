@@ -1,4 +1,5 @@
 export interface User {
+  id?: any;
   firstName: string;
   lastName: string;
   emailAddress: string;
@@ -11,3 +12,27 @@ export enum AccountTypes {
   SUPERVISOR = 'SUPERVISOR',
   STAFF = 'STAFF',
 }
+
+export const users: User[] = [
+  {
+    id: '723467',
+    firstName: 'Julie',
+    lastName: 'Okah-Donli',
+    emailAddress: 'admin@admin.com',
+    accountType: AccountTypes.ADMINISTRATOR,
+  },
+  {
+    id: '23467',
+    firstName: 'James',
+    lastName: 'Ogebe',
+    emailAddress: 'supervisor@admin.com',
+    accountType: AccountTypes.SUPERVISOR,
+  },
+  {
+    id: '83967',
+    firstName: 'Sandra',
+    lastName: 'Mohave',
+    emailAddress: 'staff@admin.com',
+    accountType: AccountTypes.STAFF,
+  },
+];

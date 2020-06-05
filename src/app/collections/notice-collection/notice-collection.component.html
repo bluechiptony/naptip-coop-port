@@ -27,6 +27,16 @@
       *ngIf="!hasError && dataSource?.data?.length > 0"
     >
       <div class="adjacent-item-grid-4 top-padding">
+        <div
+          class="container-fluid addition-box centered-flex link-up full-width"
+          [routerLink]="['/dashboard', 'notices', 'create']"
+          routerLinkActive="router-link-active"
+        >
+          <div class="center-text">
+            <i class="uil uil-focus-add"></i>
+            <span class="notice-heading block">Create new notice</span>
+          </div>
+        </div>
         <app-notice-collection-item
           *ngFor="let notice of displayCollection | async"
           [notice]="notice"

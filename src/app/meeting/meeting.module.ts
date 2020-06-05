@@ -13,6 +13,7 @@ import { FormDependenciesModule } from '../shared/form-dependencies/form-depende
 import { HttpClientModule } from '@angular/common/http';
 import { SharedComponentModule } from '../shared/shared-component/shared-component.module';
 import { StaffSelectionModalComponent } from '../modals/staff-selection-modal/staff-selection-modal.component';
+import { ReportCollectionModule } from '../collections/report-collection/report-collection.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { StaffSelectionModalComponent } from '../modals/staff-selection-modal/st
     FormDependenciesModule,
     MatDependenciesModule,
     SharedComponentModule,
+    ReportCollectionModule,
   ],
   entryComponents: [StaffSelectionModalComponent],
 })

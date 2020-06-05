@@ -5,3 +5,7 @@ export interface AuthenticationState {
   user?: User;
   token?: string;
 }
+
+export interface AdminContext {
+  context: string;
+}

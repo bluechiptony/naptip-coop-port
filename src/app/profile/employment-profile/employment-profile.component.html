@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div>
+    <span>
+      <hr />
+      <span class="form-prompt block">Posting Information</span>
+      <span class="block subtitle">Your personal details</span>
+    </span>
+  </div>
+
+  <div class="adjacent-item-grid-4">
+    <div class="app-form-row">
+      <span class="form-prompt block">Staff Number</span>
+      <span class="block">{{ staff?.staffNumber }}</span>
+    </div>
+    <div class="app-form-row">
+      <span class="form-prompt block">Zonal Command</span>
+      <span class="block">{{ staff?.currentZone?.zoneName }}</span>
+    </div>
+    <div class="app-form-row">
+      <span class="form-prompt block">Department / Unit</span>
+      <span class="block">{{ staff?.department?.departmentName }}</span>
+    </div>
+  </div>
+  <div>
+    <span>
+      <hr />
+      <span class="form-prompt block">Salary scale Information</span>
+      <span class="block subtitle">Your personal details</span>
+    </span>
+  </div>
+
+  <div class="adjacent-item-grid-4">
+    <div class="app-form-row">
+      <span class="form-prompt block">Designation</span>
+      <span class="block">{{ staff?.designation }}</span>
+    </div>
+    <div class="app-form-row">
+      <span class="form-prompt block">Grade Level</span>
+      <span class="block">{{ staff?.gradeLevel }}</span>
+    </div>
+    <div class="app-form-row">
+      <span class="form-prompt block">Salary Step</span>
+      <span class="block">{{ staff?.step }}</span>
+    </div>
+  </div>
+</div>

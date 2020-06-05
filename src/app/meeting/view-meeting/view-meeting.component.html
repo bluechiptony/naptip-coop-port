@@ -29,10 +29,10 @@
       <mat-tab-group>
         <mat-tab label="Minutes">
           <div class="vert-padding adjacent-item-grid">
-            <app-single-personnel
-              *ngFor="let person of currentMeet?.participants"
-              [person]="person"
-            ></app-single-personnel>
+            <app-report-collection-item
+              *ngFor="let report of reports"
+              [report]="report"
+            ></app-report-collection-item>
           </div>
         </mat-tab>
         <mat-tab label="Participants">

@@ -1,0 +1,29 @@
+.overview-box {
+  height: 232px;
+  max-height: 232px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.overview-two-column {
+  @extend.grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.column-height {
+  height: 232px;
+}
+
+.main-event {
+  position: relative;
+  i {
+    font-size: 3rem;
+    opacity: 0.4;
+  }
+  display: grid;
+  grid-template-columns: 50px auto;
+}

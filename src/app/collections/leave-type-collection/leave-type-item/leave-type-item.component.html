@@ -1,0 +1,33 @@
+<div class="container-fluid notice-box">
+  <div class="right-text">
+    <i class="uil uil-ellipsis-v pointer" [matMenuTriggerFor]="userMenu"> </i>
+    <mat-menu #userMenu="matMenu" xPosition="before">
+      <span mat-menu-item>
+        Edit Item
+      </span>
+    </mat-menu>
+    <span class="clearfix"> </span>
+  </div>
+  <div class="center-text">
+    <i class="uil uil-calendar-alt" style="font-size: 2rem;"></i>
+  </div>
+  <div
+    class="center-text"
+    style="padding: 1rem;"
+    class="notice-heading ovr pointer"
+  >
+    <span>
+      {{ leaveTypeItem?.leaveTypeName }}
+    </span>
+  </div>
+  <div class="effect-overflow text-fade pointer">
+    <span>
+      <!-- {{ leaveTypeItem?.noticeDetails }} -->
+    </span>
+  </div>
+  <div class="right-text">
+    <span class="subtitle">
+      {{ leaveTypeItem?.annualAccount }} Days Annually
+    </span>
+  </div>
+</div>

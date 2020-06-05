@@ -36,7 +36,16 @@
             Training Code
           </th>
           <td mat-cell *matCellDef="let row" class="table-cell">
-            <span class="table-cell-text block ellipsis">
+            <span
+              class="table-cell-text block ellipsis"
+              [routerLink]="[
+                '/dashboard',
+                'training',
+                'view',
+                row.trainingCode
+              ]"
+              routerLinkActive="router-link-active"
+            >
               {{ row.trainingCode }}
             </span>
           </td>
@@ -50,7 +59,16 @@
             Programme Title
           </th>
           <td mat-cell *matCellDef="let row" class="table-cell">
-            <span class="table-cell-text block ellipsis">
+            <span
+              class="table-cell-text block ellipsis"
+              [routerLink]="[
+                '/dashboard',
+                'training',
+                'view',
+                row.trainingCode
+              ]"
+              routerLinkActive="router-link-active"
+            >
               {{ row.trainingTitle }}
             </span>
           </td>

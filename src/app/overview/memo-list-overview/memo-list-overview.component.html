@@ -1,0 +1,20 @@
+<div class="container-fluid overview-box bg-white">
+  <div>
+    <span class="overview-heading block">Latest Memos</span>
+  </div>
+  <div class="overview-notice" *ngFor="let memo of memos">
+    <div class="excerpt">
+      <span class="ovr form-prompt block">
+        {{ memo.title }} </span
+      ><br />
+      <span class="subtitle ovr block">
+        {{ memo.category }}
+      </span>
+    </div>
+    <div>
+      <span class="subtitle right-text">
+        {{ memo.createdDate | date: "mediumDate" }}
+      </span>
+    </div>
+  </div>
+</div>

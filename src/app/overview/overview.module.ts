@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AdvancedPieComponent } from './charts/advanced-pie/advanced-pie.component';
 import { TransferOverviewComponent } from './transfer-overview/transfer-overview.component';
+import { MemoListOverviewComponent } from './memo-list-overview/memo-list-overview.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { TransferOverviewComponent } from './transfer-overview/transfer-overview
     LeaveOverviewComponent,
     AdvancedPieComponent,
     TransferOverviewComponent,
+    MemoListOverviewComponent,
   ],
   imports: [
     CommonModule,

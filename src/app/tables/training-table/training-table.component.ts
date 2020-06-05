@@ -67,8 +67,6 @@ export class TrainingTableComponent implements OnInit {
       },
 
       (error) => {
-        console.log(error);
-
         this.hasError = true;
         this.loading = false;
       }

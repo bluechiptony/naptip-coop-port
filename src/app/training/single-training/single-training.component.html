@@ -1,1 +1,31 @@
-<p>single-training works!</p>
+<div class="container-fluid">
+  <div class="route-box bg-white">
+    <div class="route-heading">
+      <span class="route-header-text"
+        >Training {{ training?.trainingTitle }}</span
+      >
+      <span class="subtitle block">{{ training?.trainingCode }}</span>
+    </div>
+    <div class="two-column-grid">
+      <div>
+        <div class="app-form-row">
+          <span class="form-prompt block">Scheduled date</span>
+          <span class="block"
+            >{{ training?.startDate | date: "mediumDate" }} -
+            {{ training?.endDate | date: "mediumDate" }}</span
+          >
+        </div>
+        <div class="app-form-row">
+          <span class="form-prompt block">Training Subject</span>
+          <span class="block">{{ training?.category }}</span>
+        </div>
+        <div class="app-form-row">
+          <span class="form-prompt block">Training Details</span>
+          <span class="block">{{ training?.description }}</span>
+        </div>
+      </div>
+
+      <app-staff-collection></app-staff-collection>
+    </div>
+  </div>
+</div>

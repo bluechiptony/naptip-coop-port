@@ -1,1 +1,23 @@
-<p>event-overview works!</p>
+<div class="container-fluid overview-box bg-white">
+  <div class="overview-two-column">
+    <div class="">
+      <div>
+        <span class="overview-heading block">Next Event</span>
+      </div>
+      <div class="right-border-vertical main-event">
+        <i class="uil uil-clock-two"></i>
+        <div style="padding-left: 20px;">
+          <span class="notice-heading block">{{ events[0]?.eventTitle }}</span>
+          <span class="notice-heading block">{{
+            events[0]?.startDate | date: "mediumDate"
+          }}</span>
+          <span>{{ events[0]?.startDate | date: "mediumTime" }}</span>
+          <div class="text-fade subtitle">
+            <span class="">{{ events[0]?.venue }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+</div>

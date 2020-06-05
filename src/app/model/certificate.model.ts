@@ -5,6 +5,8 @@ export interface Certificate {
   imageUrl: string;
   date: Date;
   category?: string;
+  createdDate: Date;
+  updatedDate: Date;
 }
 
 export const certificates: Certificate[] = [
@@ -14,6 +16,8 @@ export const certificates: Certificate[] = [
     imageUrl: 'https://',
     date: new Date(),
     category: 'EDUCATIONAL',
+    createdDate: new Date(),
+    updatedDate: new Date(),
   },
   {
     title: 'Master of Science',
@@ -21,6 +25,8 @@ export const certificates: Certificate[] = [
     imageUrl: 'https://',
     date: new Date(),
     category: 'EDUCATIONAL',
+    createdDate: new Date(),
+    updatedDate: new Date(),
   },
   {
     title: 'CISCO certified Network Associate',
@@ -28,5 +34,25 @@ export const certificates: Certificate[] = [
     imageUrl: 'https://',
     date: new Date(),
     category: 'PROFESIONAL',
+    createdDate: new Date(),
+    updatedDate: new Date(),
+  },
+  {
+    title: 'National youth service certificate',
+    description: 'Certificate of life',
+    imageUrl: 'https://',
+    date: new Date(),
+    category: 'PROFESSIONAL',
+    createdDate: new Date(),
+    updatedDate: new Date(),
+  },
+  {
+    title: 'ORACLE certified database engineer',
+    description: 'Certificate of life',
+    imageUrl: 'https://',
+    date: new Date(),
+    category: 'PROFESIONAL',
+    createdDate: new Date(),
+    updatedDate: new Date(),
   },
 ];

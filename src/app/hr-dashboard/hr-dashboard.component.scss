@@ -1,0 +1,78 @@
+@import "../../styles/dashboard.scss";
+
+* {
+  list-style-type: none;
+}
+
+.menu {
+  width: 100%;
+  overflow: hidden;
+}
+
+.item {
+  border-top: 1px solid #ffffff;
+  overflow: hidden;
+}
+
+.btn {
+  display: block;
+  padding: 16px 20px;
+  font-weight: 700;
+  position: relative;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 20px;
+  bottom: -7px;
+  background-color: $main;
+  transform: rotate(45deg);
+}
+
+.btn i {
+  margin-right: 10px;
+}
+
+.smenu {
+  background-color: lighten($color: $main, $amount: 20);
+  overflow: hidden;
+  transition: max-height 0.3s;
+  max-height: 0;
+}
+
+.smenu span {
+  display: block;
+  padding: 16px 24px;
+  font-size: 12px;
+  margin: 4px 0;
+  position: relative;
+}
+
+.smenu span::before {
+  content: "";
+  width: 6px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: red;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.smenu span:hover:before {
+  opacity: 1;
+}
+
+.item:target .smenu {
+  max-height: 10em;
+}
+
+.smenu_open {
+  background-color: lighten($color: $main, $amount: 20);
+  overflow: hidden;
+  transition: max-height 0.3s;
+  max-height: 10em;
+}
