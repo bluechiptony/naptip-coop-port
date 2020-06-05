@@ -17,6 +17,7 @@ import { User } from '../model/user.model';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit, OnDestroy {
+  customClass = 'customclass';
   drawerOpen: boolean = true;
   authState: any = {
     loggedIn: true,

@@ -1,26 +1,33 @@
 <nav [ngClass]="{ 'navbar-open': drawerOpen, navbar: !drawerOpen }">
   <div class="app-form-row"></div>
-  <ul class="navbar-nav" *ngIf="loggedInUser.accountType != 'STAFF'">
-    <li
-      class="nav-item"
-      [routerLink]="['/dashboard']"
-      routerLinkActive="router-link-active"
-    >
-      <div class="list-menu">
+
+  <!-- Start Admin navigation -->
+
+  <accordion
+    [isAnimated]="true"
+    [closeOthers]="true"
+    *ngIf="loggedInUser.accountType != 'STAFF'"
+  >
+    <accordion-group>
+      <button
+        class="btn btn-link"
+        accordion-heading
+        type="button"
+        [routerLink]="['/dashboard', '']"
+        routerLinkActive="router-link-active"
+      >
         <i class="uil uil-dashboard"></i>
         <span class="nav-text">Dashboard</span>
-      </div>
-    </li>
-    <li
-      class="nav-item"
-      id="admin"
-      *ngIf="adminContext === 'ADMINISTRATION'"
-      (click)="changeOpenstate($event)"
-    >
-      <div class="list-menu">
+      </button>
+    </accordion-group>
+
+    <accordion-group class="" *ngIf="adminContext === 'ADMINISTRATION'">
+      <button class="btn btn-link" accordion-heading type="button">
         <i class="uil uil-home"></i>
+
         <span class="nav-text">Administration</span>
-      </div>
+      </button>
+
       <div class="sub-menu">
         <ul class="sub-list">
           <li
@@ -53,17 +60,13 @@
           </li>
         </ul>
       </div>
-    </li>
-    <li
-      class="nav-item"
-      id="admin"
-      *ngIf="adminContext === 'HUMAN_RESOURCES'"
-      (click)="changeOpenstate($event)"
-    >
-      <div class="list-menu">
-        <i class="uil uil-home"></i>
+    </accordion-group>
+    <accordion-group *ngIf="adminContext === 'HUMAN_RESOURCES'">
+      <button class="btn btn-link" accordion-heading type="button">
+        <i class="uil uil-briefcase-alt"></i>
         <span class="nav-text">Carreer</span>
-      </div>
+      </button>
+
       <div class="sub-menu">
         <ul class="sub-list">
           <li
@@ -96,13 +99,13 @@
           </li>
         </ul>
       </div>
-    </li>
-
-    <li class="nav-item" *ngIf="adminContext === 'HUMAN_RESOURCES'">
-      <div class="list-menu">
-        <i class="uil uil-building"></i>
+    </accordion-group>
+    <accordion-group *ngIf="adminContext === 'HUMAN_RESOURCES'">
+      <button class="btn btn-link" accordion-heading type="button">
+        <i class="uil uil-calendar-slash"></i>
         <span class="nav-text">Leave Management</span>
-      </div>
+      </button>
+
       <div class="sub-menu">
         <ul class="sub-list">
           <li
@@ -122,13 +125,13 @@
           </li>
         </ul>
       </div>
-    </li>
-
-    <li class="nav-item" *ngIf="adminContext === 'OPERATIONS'">
-      <div class="list-menu">
+    </accordion-group>
+    <accordion-group *ngIf="adminContext === 'OPERATIONS'">
+      <button class="btn btn-link" accordion-heading type="button">
         <i class="uil uil-building"></i>
         <span class="nav-text">Activity</span>
-      </div>
+      </button>
+
       <div class="sub-menu">
         <ul class="sub-list">
           <li
@@ -161,13 +164,14 @@
           </li>
         </ul>
       </div>
-    </li>
+    </accordion-group>
 
-    <li class="nav-item" *ngIf="adminContext === 'HUMAN_RESOURCES'">
-      <div class="list-menu">
+    <accordion-group class="" *ngIf="adminContext === 'HUMAN_RESOURCES'">
+      <button class="btn btn-link" accordion-heading type="button">
         <i class="uil uil-invoice"></i>
         <span class="nav-text">Staff Members</span>
-      </div>
+      </button>
+
       <div class="sub-menu">
         <ul class="sub-list">
           <li
@@ -186,13 +190,14 @@
           </li>
         </ul>
       </div>
-    </li>
+    </accordion-group>
 
-    <li class="nav-item" *ngIf="adminContext === 'OPERATIONS'">
-      <div class="list-menu">
-        <i class="uil uil-users-alt"></i>
+    <accordion-group *ngIf="adminContext === 'OPERATIONS'">
+      <button class="btn btn-link" accordion-heading type="button">
+        <i class="uil uil-user-square"></i>
         <span class="nav-text">Users</span>
-      </div>
+      </button>
+
       <div class="sub-menu">
         <ul class="sub-list">
           <li
@@ -204,54 +209,60 @@
           </li>
         </ul>
       </div>
-    </li>
-    <li
-      *ngIf="adminContext === 'OPERATIONS'"
-      class="nav-item"
-      [routerLink]="['settings/organization']"
-      routerLinkActive="router-link-active"
-    >
-      <div class="list-menu">
+    </accordion-group>
+    <accordion-group *ngIf="adminContext === 'OPERATIONS'">
+      <button
+        class="btn btn-link"
+        accordion-heading
+        type="button"
+        [routerLink]="['settings/organization']"
+        routerLinkActive="router-link-active"
+      >
         <i class="uil uil-sliders-v-alt"></i>
         <span class="nav-text">Settings</span>
-      </div>
-    </li>
-
-    <li
-      class="nav-item"
-      [routerLink]="['/dashboard', 'profile']"
-      routerLinkActive="router-link-active"
-    >
-      <div class="list-menu">
+      </button>
+    </accordion-group>
+    <accordion-group>
+      <button
+        class="btn btn-link"
+        accordion-heading
+        type="button"
+        [routerLink]="['/dashboard', 'profile']"
+        routerLinkActive="router-link-active"
+      >
         <i class="uil uil-user-square"></i>
         <span class="nav-text">My Profile</span>
-      </div>
-    </li>
+      </button>
+    </accordion-group>
+  </accordion>
 
-    <li class="nav-item" (click)="logOut()">
-      <div class="list-menu">
-        <i class="uil uil-sign-out-alt"></i>
-        <span class="nav-text">Logout</span>
-      </div>
-    </li>
-  </ul>
+  <!-- End admin navigation -->
 
-  <ul class="navbar-nav" *ngIf="loggedInUser.accountType === 'STAFF'">
-    <li
-      class="nav-item"
-      [routerLink]="['/dashboard']"
-      routerLinkActive="router-link-active"
-    >
-      <div class="list-menu">
+  <!-- Start staff navigation -->
+
+  <accordion
+    [isAnimated]="true"
+    [closeOthers]="true"
+    *ngIf="loggedInUser.accountType === 'STAFF'"
+  >
+    <accordion-group>
+      <button
+        class="btn btn-link"
+        accordion-heading
+        type="button"
+        [routerLink]="['/dashboard']"
+        routerLinkActive="router-link-active"
+      >
         <i class="uil uil-dashboard"></i>
         <span class="nav-text">Dashboard</span>
-      </div>
-    </li>
-    <li class="nav-item" id="admin" (click)="changeOpenstate($event)">
-      <div class="list-menu">
-        <i class="uil uil-home"></i>
-        <span class="nav-text">Administration</span>
-      </div>
+      </button>
+    </accordion-group>
+
+    <accordion-group class="" *ngIf="adminContext === 'ADMINISTRATION'">
+      <button class="btn btn-link" accordion-heading type="button">
+        <i class="uil uil-home"></i> Administration
+      </button>
+
       <div class="sub-menu">
         <ul class="sub-list">
           <li
@@ -270,12 +281,13 @@
           </li>
         </ul>
       </div>
-    </li>
-    <li class="nav-item" id="admin" (click)="changeOpenstate($event)">
-      <div class="list-menu">
-        <i class="uil uil-home"></i>
-        <span class="nav-text">My Carreer</span>
-      </div>
+    </accordion-group>
+    <accordion-group>
+      <button class="btn btn-link" accordion-heading type="button">
+        <i class="uil uil-briefcase-alt"></i>
+        <span class="nav-text">Carreer</span>
+      </button>
+
       <div class="sub-menu">
         <ul class="sub-list">
           <li
@@ -308,13 +320,13 @@
           </li>
         </ul>
       </div>
-    </li>
-
-    <li class="nav-item">
-      <div class="list-menu">
-        <i class="uil uil-building"></i>
+    </accordion-group>
+    <accordion-group>
+      <button class="btn btn-link" accordion-heading type="button">
+        <i class="uil uil-calendar-slash"></i>
         <span class="nav-text">Leave Management</span>
-      </div>
+      </button>
+
       <div class="sub-menu">
         <ul class="sub-list">
           <li
@@ -326,13 +338,13 @@
           </li>
         </ul>
       </div>
-    </li>
-
-    <li class="nav-item">
-      <div class="list-menu">
+    </accordion-group>
+    <accordion-group>
+      <button class="btn btn-link" accordion-heading type="button">
         <i class="uil uil-building"></i>
         <span class="nav-text">Activity</span>
-      </div>
+      </button>
+
       <div class="sub-menu">
         <ul class="sub-list">
           <li
@@ -365,25 +377,23 @@
           </li>
         </ul>
       </div>
-    </li>
-    <li
-      class="nav-item"
-      [routerLink]="['/dashboard', 'profile']"
-      routerLinkActive="router-link-active"
-    >
-      <div class="list-menu">
+    </accordion-group>
+
+    <accordion-group>
+      <button
+        class="btn btn-link"
+        accordion-heading
+        type="button"
+        [routerLink]="['/dashboard', 'profile']"
+        routerLinkActive="router-link-active"
+      >
         <i class="uil uil-user-square"></i>
         <span class="nav-text">My Profile</span>
-      </div>
-    </li>
+      </button>
+    </accordion-group>
+  </accordion>
 
-    <li class="nav-item" (click)="logOut()">
-      <div class="list-menu">
-        <i class="uil uil-sign-out-alt"></i>
-        <span class="nav-text">Logout</span>
-      </div>
-    </li>
-  </ul>
+  <!-- End staff navigation -->
 </nav>
 <main
   class="bg-backdrop full-page-height router-bg"
@@ -418,7 +428,20 @@
         ><span
           >{{ loggedInUser?.firstName }} {{ loggedInUser?.lastName }}
         </span>
-        <span><i class="uil uil-user-circle profile-name text-main"></i></span>
+        <span
+          ><i
+            class="uil uil-user-circle profile-name text-main"
+            [matMenuTriggerFor]="profileMenu"
+          ></i
+        ></span>
+        <mat-menu #profileMenu="matMenu" xPosition="before">
+          <span mat-menu-item [routerLink]="['/dashboard', 'profile']">
+            My Profile
+          </span>
+          <span mat-menu-item (click)="logOut()">
+            Log Out
+          </span>
+        </mat-menu>
       </span>
     </div>
   </div>

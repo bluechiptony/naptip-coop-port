@@ -1,1 +1,25 @@
 @import "../../styles/dashboard.scss";
+@import "../../styles/colors.scss";
+
+accordion-group {
+  width: 100%;
+}
+
+.panel-heading .card-header .panel-enabled {
+  background-color: red;
+}
+
+.panel.customclass {
+  background-color: red;
+}
+
+.sub-menu {
+  background-color: lighten($color: $main, $amount: 20);
+}
+.sub-list {
+  li {
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 20px 10px 40px;
+  }
+}

@@ -5,6 +5,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { OverviewModule } from '../overview/overview.module';
 import { MatMenuModule } from '@angular/material/menu';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -13,6 +14,7 @@ import { MatMenuModule } from '@angular/material/menu';
     DashboardRoutingModule,
     OverviewModule,
     MatMenuModule,
+    AccordionModule.forRoot(),
   ],
 })
 export class DashboardModule {}
