@@ -22,6 +22,43 @@ export interface Staff {
   designation: string;
 }
 
+export interface StaffDetails {
+  id?: any;
+  userCode?: string;
+  staffCode?: string;
+  firstName: string;
+  middleName?: string;
+  lastName: string;
+  dob: Date;
+  gender: string;
+  nationality: string;
+  stateOfOrigin: number;
+  lgaOfOrigin: number;
+  phoneNumber?: string;
+  emailAddress: string;
+}
+
+export interface StaffEmploymentDetails {
+  userCode?: string;
+  staffCode?: string;
+  staffNumber?: string;
+  zonalCommand: string;
+  department: string;
+  designation: string;
+  gradeLevel: string;
+  step: string;
+  unit?: string;
+  employedDate: Date;
+  serviceRetirementDate?: Date;
+  statutoryRetirementDate?: Date;
+}
+
+export interface AccountAssignment {
+  userCode: string;
+  zonalCommandCode: string;
+  departmentCode: string;
+}
+
 export interface StaffState {
   staff?: Staff;
 }

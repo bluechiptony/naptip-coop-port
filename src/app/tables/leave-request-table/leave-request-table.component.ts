@@ -61,8 +61,6 @@ export class LeaveRequestTableComponent implements OnInit {
     this.loading = true;
     this.userSubscription = this.leave.getLeaves().subscribe(
       (data: Leave[]) => {
-        console.log(data);
-
         this.loading = false;
         this.hasError = false;
         this.addLeaveToDataSource(data);

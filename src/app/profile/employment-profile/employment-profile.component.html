@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid bottom-padding">
   <div>
     <span>
       <hr />
@@ -7,40 +7,130 @@
     </span>
   </div>
 
-  <div class="adjacent-item-grid-4">
-    <div class="app-form-row">
-      <span class="form-prompt block">Staff Number</span>
-      <span class="block">{{ staff?.staffNumber }}</span>
-    </div>
-    <div class="app-form-row">
-      <span class="form-prompt block">Zonal Command</span>
-      <span class="block">{{ staff?.currentZone?.zoneName }}</span>
-    </div>
-    <div class="app-form-row">
-      <span class="form-prompt block">Department / Unit</span>
-      <span class="block">{{ staff?.department?.departmentName }}</span>
-    </div>
-  </div>
-  <div>
-    <span>
-      <hr />
-      <span class="form-prompt block">Salary scale Information</span>
-      <span class="block subtitle">Your personal details</span>
-    </span>
-  </div>
+  <form [formGroup]="empForm" (ngSubmit)="submitForm()">
+    <div class="adjacent-item-grid-4">
+      <div class="app-form-row">
+        <span class="form-prompt block">Staff Number</span>
 
-  <div class="adjacent-item-grid-4">
-    <div class="app-form-row">
-      <span class="form-prompt block">Designation</span>
-      <span class="block">{{ staff?.designation }}</span>
+        <input
+          type="text"
+          class="input-text full-width"
+          placeholder=""
+          readonly
+          formControlName="staffCode"
+        />
+      </div>
+      <div class="app-form-row">
+        <span class="form-prompt block">Zonal Command</span>
+        <ng-select
+          class="block"
+          style="width: 100%;"
+          placeholder="Select Zonal Command"
+          bindLabel="zonalCommandName"
+          bindValue="zonalCommandCode"
+          [items]="zonalCommands"
+          formControlName="zonalCommandCode"
+        >
+          <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+            <div>
+              <span> </span
+              ><span [ngOptionHighlight]="search"
+                >{{ item.zonalCommandName }} Command</span
+              >
+            </div>
+            <!-- <small
+                ><b>Command:</b> {{ item.currentZone?.zoneName }} |
+                <b>Department:</b> {{ item.department?.departmentName }}</small
+              > -->
+          </ng-template>
+        </ng-select>
+      </div>
+      <div class="app-form-row">
+        <span class="form-prompt block">Department / Unit</span>
+        <ng-select
+          class="block"
+          style="width: 100%;"
+          placeholder="Select Department"
+          bindLabel="departmentName"
+          bindValue="unitCode"
+          [items]="units"
+          formControlName="unitCode"
+          (change)="unitChanged($event)"
+        >
+          <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+            <div>
+              <span> </span
+              ><span [ngOptionHighlight]="search">{{
+                item.departmentName
+              }}</span>
+            </div>
+            <!-- <small
+                ><b>Command:</b> {{ item.currentZone?.zoneName }} |
+                <b>Department:</b> {{ item.department?.departmentName }}</small
+              > -->
+          </ng-template>
+        </ng-select>
+      </div>
+      <span></span>
+      <div class="app-form-row">
+        <label for="" class="form-prompt">Date Of Employemnt</label>
+        <input
+          type="text"
+          class="input-text full-width"
+          [owlDateTime]="dt1"
+          [owlDateTimeTrigger]="dt1"
+          placeholder="Select Date of employment"
+          formControlName="employedDate"
+        />
+        <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>
+      </div>
     </div>
-    <div class="app-form-row">
-      <span class="form-prompt block">Grade Level</span>
-      <span class="block">{{ staff?.gradeLevel }}</span>
+    <div>
+      <span>
+        <hr />
+        <span class="form-prompt block">Salary scale Information</span>
+        <span class="block subtitle">Your personal details</span>
+      </span>
     </div>
-    <div class="app-form-row">
-      <span class="form-prompt block">Salary Step</span>
-      <span class="block">{{ staff?.step }}</span>
+
+    <div class="adjacent-item-grid-4">
+      <div class="app-form-row">
+        <span class="form-prompt block">Designation</span>
+        <input
+          type="text"
+          class="input-text full-width"
+          placeholder=""
+          formControlName="designation"
+        />
+      </div>
+      <div class="app-form-row">
+        <span class="form-prompt block">Grade Level</span>
+        <input
+          type="text"
+          class="input-text full-width"
+          placeholder=""
+          formControlName="gradeLevel"
+        />
+      </div>
+      <div class="app-form-row">
+        <span class="form-prompt block">Salary Step</span>
+        <input
+          type="text"
+          class="input-text full-width"
+          placeholder=""
+          formControlName="step"
+        />
+      </div>
+      <div class="app-form-row">
+        <label for="" class="form-prompt">&nbsp; </label>
+        <button
+          class="app-button text-white bg-main"
+          type="submit"
+          [ngClass]="{ 'anim-button': loading }"
+        >
+          Complete
+        </button>
+      </div>
     </div>
-  </div>
+  </form>
 </div>

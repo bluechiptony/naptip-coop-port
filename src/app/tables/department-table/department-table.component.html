@@ -11,7 +11,11 @@
         />
       </div>
       <div>
-        <button class="app-button uppercase bg-main text-white pull-right">
+        <button
+          class="app-button uppercase bg-main text-white pull-right"
+          [routerLink]="['/dashboard', 'departments', 'new']"
+          routerLinkActive="router-link-active"
+        >
           Add Department
         </button>
       </div>
@@ -34,10 +38,15 @@
           <td mat-cell *matCellDef="let row" class="table-cell">
             <span
               class="table-cell-text block ellipsis"
-              [routerLink]="['/dashboard', 'departments', 'view', row.id]"
+              [routerLink]="[
+                '/dashboard',
+                'departments',
+                'view',
+                row.departmentCode
+              ]"
               routerLinkActive="router-link-active"
             >
-              {{ row.id }}
+              {{ row.departmentId }}
             </span>
           </td>
         </ng-container>

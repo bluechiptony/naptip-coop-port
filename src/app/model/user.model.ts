@@ -1,5 +1,6 @@
 export interface User {
   id?: any;
+  userCode?: string;
   firstName: string;
   lastName: string;
   emailAddress: string;

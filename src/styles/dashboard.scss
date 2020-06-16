@@ -20,7 +20,8 @@
   height: 100vh;
   position: fixed;
   background-color: $main;
-  color: #ffffff;
+  // color: #ffffff;
+  color: rgba($color: #ffffff, $alpha: 0.8);
   transition: width 200ms ease-in-out;
   cursor: pointer;
   .navbar-nav {
@@ -43,7 +44,8 @@
   height: 100vh;
   position: fixed;
   background-color: $main;
-  color: #ffffff;
+  // color: #ffffff;
+  color: rgba($color: #ffffff, $alpha: 0.8);
   transition: width 200ms ease-in-out;
   cursor: pointer;
   .navbar-nav {
@@ -145,7 +147,8 @@
 }
 
 .router-link-active {
-  color: #f0f014;
+  // color: #f0f014;
+  color: lighten($color: $main, $amount: 35);
 }
 
 .router-bg {

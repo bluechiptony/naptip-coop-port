@@ -8,6 +8,7 @@ import { CertificationsComponent } from './certifications/certifications.compone
 import { SharedComponentModule } from '../shared/shared-component/shared-component.module';
 import { EmploymentProfileComponent } from './employment-profile/employment-profile.component';
 import { FormDependenciesModule } from '../shared/form-dependencies/form-dependencies.module';
+import { MatDependenciesModule } from '../shared/mat-dependencies/mat-dependencies.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormDependenciesModule } from '../shared/form-dependencies/form-depende
     ProfileRoutingModule,
     SharedComponentModule,
     FormDependenciesModule,
+    MatDependenciesModule,
   ],
 })
 export class ProfileModule {}

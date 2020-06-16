@@ -1,0 +1,53 @@
+<div class="container-fluid top-padding">
+  <div class="three-column-grid auto-grid-height">
+    <div>
+      <span class="notice-heading">Details</span>
+      <i
+        class="uil uil-user-plus link-up pull-right"
+        (click)="openStaffSelect()"
+      ></i>
+      <div>
+        <div class="app-form-row">
+          <span class="form-prompt block">Zonal Command</span>
+          <span>{{ zonalCommand?.zonalCommandName }}</span>
+        </div>
+        <div class="app-form-row">
+          <span class="form-prompt block">State</span>
+          <span>{{ zonalCommand?.stateName }}</span>
+        </div>
+        <div class="app-form-row">
+          <span class="form-prompt block">LGA</span>
+          <span>{{ zonalCommand?.lgaName }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Department Head  -->
+
+    <div>
+      <span class="notice-heading">Zonal Command head</span>
+      <i
+        class="uil uil-user-plus link-up pull-right"
+        (click)="openStaffSelect()"
+      ></i>
+
+      <div></div>
+    </div>
+    <!-- Available Unit  -->
+
+    <div>
+      <span class="notice-heading">Units</span>
+      <i
+        class="uil uil-panel-add link-up pull-right"
+        (click)="openDepartmentSelect()"
+      ></i>
+
+      <div>
+        <div class="unit-pill" *ngFor="let unit of units">
+          <span class="form-prompt block">{{ unit.departmentName }}</span>
+          <span class="uppercase">{{ unit.unitCode }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

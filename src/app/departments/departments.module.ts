@@ -9,9 +9,17 @@ import { StaffTableModule } from '../tables/staff-table/staff-table.module';
 import { MatDependenciesModule } from '../shared/mat-dependencies/mat-dependencies.module';
 import { PostingTableModule } from '../tables/posting-table/posting-table.module';
 import { LeaveRequestTableModule } from '../tables/leave-request-table/leave-request-table.module';
+import { NewDepartmentComponent } from './new-department/new-department.component';
+import { FormDependenciesModule } from '../shared/form-dependencies/form-dependencies.module';
+import { SetupComponent } from './setup/setup.component';
 
 @NgModule({
-  declarations: [DepartmentsComponent, SingleDepartmentComponent],
+  declarations: [
+    DepartmentsComponent,
+    SingleDepartmentComponent,
+    NewDepartmentComponent,
+    SetupComponent,
+  ],
   imports: [
     CommonModule,
     DepartmentsRoutingModule,
@@ -21,6 +29,7 @@ import { LeaveRequestTableModule } from '../tables/leave-request-table/leave-req
     LeaveRequestTableModule,
     RouterModule,
     MatDependenciesModule,
+    FormDependenciesModule,
   ],
 })
 export class DepartmentsModule {}

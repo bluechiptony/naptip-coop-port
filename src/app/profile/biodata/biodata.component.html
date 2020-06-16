@@ -1,29 +1,44 @@
-<div class="container-fluid">
-  <form [formGroup]="profileForm">
-    <div>
-      <button class="app-button text-white bg-main pull-right">
+<div class="container-fluid bottom-padding">
+  <div>
+    <!-- <button class="app-button text-white bg-main pull-right" type="submit">
         Complete Update
-      </button>
-      <span class="clearfix"></span>
-      <span>
-        <hr />
-        <span class="form-prompt block">Personal Information</span>
-        <span class="block subtitle">Your personal details</span>
-      </span>
-    </div>
+      </button> -->
+    <span class="clearfix"></span>
+    <span>
+      <hr />
+      <span class="form-prompt block">Personal Information</span>
+      <span class="block subtitle">Your personal details</span>
+    </span>
+  </div>
 
+  <form [formGroup]="bioDataForm" (ngSubmit)="submitProfile()">
     <div class="adjacent-item-grid-4">
       <div class="app-form-row">
         <label for="" class="form-prompt">First Name</label>
-        <input type="text" class="input-text full-width" placeholder="" />
+        <input
+          type="text"
+          class="input-text full-width"
+          placeholder=""
+          formControlName="firstName"
+        />
       </div>
       <div class="app-form-row">
         <label for="" class="form-prompt">Middle Name</label>
-        <input type="text" class="input-text full-width" placeholder="" />
+        <input
+          type="text"
+          class="input-text full-width"
+          placeholder=""
+          formControlName="middleName"
+        />
       </div>
       <div class="app-form-row">
         <label for="" class="form-prompt">Last Name</label>
-        <input type="text" class="input-text full-width" placeholder="" />
+        <input
+          type="text"
+          class="input-text full-width"
+          placeholder=""
+          formControlName="lastName"
+        />
       </div>
       <div class="app-form-row">
         <!-- <label for="" class="form-prompt">First Name</label>
@@ -32,44 +47,126 @@
 
       <div class="app-form-row">
         <label for="" class="form-prompt">Nationality</label>
-        <input type="text" class="input-text full-width" placeholder="" />
+        <ng-select
+          class="block"
+          style="width: 100%;"
+          placeholder="Select Nationality"
+          bindLabel="nationality"
+          [items]="nationalities"
+          bindValue="nationId"
+          formControlName="nationality"
+        >
+          <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+            <div>
+              <span> </span
+              ><span [ngOptionHighlight]="search">{{ item.nationality }}</span>
+            </div>
+          </ng-template>
+        </ng-select>
       </div>
       <div class="app-form-row">
         <label for="" class="form-prompt">State of Origin</label>
-        <input type="text" class="input-text full-width" placeholder="" />
+        <ng-select
+          class="block"
+          style="width: 100%;"
+          placeholder="Select State"
+          bindLabel="stateName"
+          [items]="states"
+          bindValue="stateId"
+          (change)="stateSelected($event)"
+          formControlName="stateOfOrigin"
+        >
+          <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+            <div>
+              <span> </span
+              ><span [ngOptionHighlight]="search">{{ item.stateName }}</span>
+            </div>
+          </ng-template>
+        </ng-select>
       </div>
       <div class="app-form-row">
         <label for="" class="form-prompt">Local government of origin</label>
-        <input type="text" class="input-text full-width" placeholder="" />
+        <ng-select
+          class="block"
+          style="width: 100%;"
+          placeholder="Select local government"
+          bindLabel="lgaName"
+          bindValue="lgaId"
+          [items]="lgas"
+          formControlName="lgaOfOrigin"
+        >
+          <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+            <div>
+              <span> </span
+              ><span [ngOptionHighlight]="search">{{ item.lgaName }}</span>
+            </div>
+          </ng-template>
+        </ng-select>
+      </div>
+      <span></span>
+      <div>
+        <label for="" class="form-prompt">Date Of Birth</label>
+        <input
+          type="text"
+          class="input-text full-width"
+          [owlDateTime]="dt1"
+          [owlDateTimeTrigger]="dt1"
+          placeholder="Select Date of birth"
+          formControlName="dob"
+        />
+        <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>
+      </div>
+      <div>
+        <label for="" class="form-prompt">Gender</label>
+        <ng-select
+          class="block"
+          style="width: 100%;"
+          placeholder="Select gender"
+          bindLabel="item"
+          [items]="genders"
+          formControlName="gender"
+        >
+          <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+            <div>
+              <span> </span><span [ngOptionHighlight]="search">{{ item }}</span>
+            </div>
+          </ng-template>
+        </ng-select>
       </div>
       <div class="app-form-row">
-        <!-- <label for="" class="form-prompt">First Name</label>
-        <input type="text" class="input-text full-width" placeholder="" /> -->
-      </div>
-    </div>
-
-    <div>
-      <hr />
-      <span class="form-prompt block">Contact Information</span>
-      <span class="block subtitle">Your personal details</span>
-    </div>
-    <div class="adjacent-item-grid-4">
-      <div class="app-form-row">
-        <label for="" class="form-prompt">Phone number</label>
-        <input type="text" class="input-text full-width" placeholder="" />
-      </div>
-      <div class="app-form-row">
-        <label for="" class="form-prompt">Email address</label>
-        <input type="text" class="input-text full-width" placeholder="" />
-      </div>
-      <div class="app-form-row">
-        <label for="" class="form-prompt">Office address</label>
-        <input type="text" class="input-text full-width" placeholder="" />
-      </div>
-      <div class="app-form-row">
-        <label for="" class="form-prompt">Home address</label>
-        <input type="text" class="input-text full-width" placeholder="" />
+        <label for="" class="form-prompt">&nbsp; </label>
+        <button
+          class="app-button text-white bg-main"
+          type="submit"
+          [ngClass]="{ 'anim-button': loading }"
+        >
+          Complete
+        </button>
       </div>
     </div>
   </form>
+
+  <!-- <div>
+    <hr />
+    <span class="form-prompt block">Contact Information</span>
+    <span class="block subtitle">Your personal details</span>
+  </div>
+  <div class="adjacent-item-grid-4">
+    <div class="app-form-row">
+      <label for="" class="form-prompt">Phone number</label>
+      <input type="text" class="input-text full-width" placeholder="" />
+    </div>
+    <div class="app-form-row">
+      <label for="" class="form-prompt">Email address</label>
+      <input type="text" class="input-text full-width" placeholder="" />
+    </div>
+    <div class="app-form-row">
+      <label for="" class="form-prompt">Office address</label>
+      <input type="text" class="input-text full-width" placeholder="" />
+    </div>
+    <div class="app-form-row">
+      <label for="" class="form-prompt">Home address</label>
+      <input type="text" class="input-text full-width" placeholder="" />
+    </div>
+  </div> -->
 </div>

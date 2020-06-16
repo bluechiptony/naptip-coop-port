@@ -17,6 +17,7 @@ import { StaffCollectionItemComponent } from '../../collections/staff-collection
 import { RouterModule } from '@angular/router';
 import { CertificateCollectionComponent } from 'src/app/collections/certificate-collection/certificate-collection.component';
 import { CertificateCollectionItemComponent } from 'src/app/collections/certificate-collection/certificate-collection-item/certificate-collection-item.component';
+import { DepartmentSelectModalComponent } from '../../modals/department-select-modal/department-select-modal.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CertificateCollectionItemComponent } from 'src/app/collections/certific
     StaffCollectionItemComponent,
     CertificateCollectionComponent,
     CertificateCollectionItemComponent,
+    DepartmentSelectModalComponent,
   ],
   imports: [
     CommonModule,

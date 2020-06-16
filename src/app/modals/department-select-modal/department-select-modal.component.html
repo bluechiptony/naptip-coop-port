@@ -1,0 +1,40 @@
+<div class="modal-padding">
+  <div>
+    <span class="route-header-text">Select department </span>
+    <span class="pull-right">
+      <i class="uil uil-times-circle link-up" (click)="close()"></i>
+    </span>
+    <span class="clearfix"></span>
+  </div>
+
+  <div>
+    <div class="app-form-row">
+      <label for="" class="form-prompt">Department</label>
+      <ng-select
+        class="block"
+        style="width: 100%;"
+        placeholder="Select Department"
+        bindLabel="departmentName"
+        [items]="departments"
+        (change)="onChange($event)"
+      >
+        <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+          <div>
+            <span> </span
+            ><span [ngOptionHighlight]="search">{{ item.departmentName }}</span>
+          </div>
+          <!-- <small
+                ><b>Command:</b> {{ item.currentZone?.zoneName }} |
+                <b>Department:</b> {{ item.department?.departmentName }}</small
+              > -->
+        </ng-template>
+      </ng-select>
+    </div>
+
+    <div class="app-form-row">
+      <button class="app-button text-white bg-main" (click)="setSelected()">
+        Create Unit
+      </button>
+    </div>
+  </div>
+</div>

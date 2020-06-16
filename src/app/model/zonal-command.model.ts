@@ -5,6 +5,13 @@ export interface ZonalCommand {
   state: string;
   lga: string;
 }
+export interface ZonalCommandRequest {
+  id?: any;
+  zonalCommandCode?: string;
+  zonalCommandName: string;
+  state: string;
+  lga: string;
+}
 
 export const zonalCommands: ZonalCommand[] = [
   {

@@ -9,9 +9,17 @@ import { StaffTableModule } from '../tables/staff-table/staff-table.module';
 import { TransferTableModule } from '../tables/transfer-table/transfer-table.module';
 import { MatDependenciesModule } from '../shared/mat-dependencies/mat-dependencies.module';
 import { LeaveRequestTableModule } from '../tables/leave-request-table/leave-request-table.module';
+import { NewZonalCommandComponent } from './new-zonal-command/new-zonal-command.component';
+import { FormDependenciesModule } from '../shared/form-dependencies/form-dependencies.module';
+import { SetupComponent } from './setup/setup.component';
 
 @NgModule({
-  declarations: [ZonalCommandsComponent, SingleZonalCommandComponent],
+  declarations: [
+    ZonalCommandsComponent,
+    SingleZonalCommandComponent,
+    NewZonalCommandComponent,
+    SetupComponent,
+  ],
   imports: [
     CommonModule,
     ZonalCommandsRoutingModule,
@@ -20,6 +28,7 @@ import { LeaveRequestTableModule } from '../tables/leave-request-table/leave-req
     TransferTableModule,
     LeaveRequestTableModule,
     MatDependenciesModule,
+    FormDependenciesModule,
     RouterModule,
   ],
 })

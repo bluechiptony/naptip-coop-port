@@ -7,122 +7,113 @@
     <span class="clearfix"></span>
   </div>
 
-  <div>
-    <div class="app-form-row">
-      <label for="" class="form-prompt">First Name</label>
-      <input
-        type="text"
-        class="input-text full-width"
-        placeholder="e.g James"
-      />
-    </div>
-    <div class="app-form-row">
-      <label for="" class="form-prompt">Last Name / Surname</label>
-      <input
-        type="text"
-        class="input-text full-width"
-        placeholder="e.g Okadigbo"
-      />
-    </div>
-    <div class="app-form-row">
-      <label for="" class="form-prompt">Email address</label>
-      <input
-        type="text"
-        class="input-text full-width"
-        placeholder="e.g james.okadigbo@gmail.com"
-      />
-    </div>
+  <!-- Firm start -->
+  <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+    <div>
+      <div class="app-form-row">
+        <label for="" class="form-prompt">First Name</label>
+        <input
+          type="text"
+          class="input-text full-width"
+          placeholder="e.g James"
+          formControlName="firstName"
+        />
+      </div>
+      <div class="app-form-row">
+        <label for="" class="form-prompt">Last Name / Surname</label>
+        <input
+          type="text"
+          class="input-text full-width"
+          placeholder="e.g Okadigbo"
+          formControlName="lastName"
+        />
+      </div>
+      <div class="app-form-row">
+        <label for="" class="form-prompt">Email address</label>
+        <input
+          type="text"
+          class="input-text full-width"
+          placeholder="e.g james.okadigbo@gmail.com"
+          formControlName="emailAddress"
+        />
+      </div>
 
-    <div class="app-form-row">
-      <label for="" class="form-prompt">Department </label>
-      <ng-select
-        class="block"
-        style="width: 100%;"
-        placeholder="Select Department"
-        bindLabel="departmentName"
-        [items]="departments"
-        (change)="onChange($event)"
-      >
-        <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
-          <div>
-            <span> </span
-            ><span [ngOptionHighlight]="search">{{ item.departmentName }}</span>
-          </div>
-          <!-- <small
-                ><b>Command:</b> {{ item.currentZone?.zoneName }} |
-                <b>Department:</b> {{ item.department?.departmentName }}</small
-              > -->
-        </ng-template>
-      </ng-select>
-    </div>
-    <div class="app-form-row">
-      <label for="" class="form-prompt">Zonal Command</label>
-      <ng-select
-        class="block"
-        style="width: 100%;"
-        placeholder="Select Zonal Command"
-        bindLabel="zoneName"
-        [items]="commands"
-        (change)="onChange($event)"
-      >
-        <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
-          <div>
-            <span> </span
-            ><span [ngOptionHighlight]="search">{{ item.zoneName }}</span>
-          </div>
-          <!-- <small
-                ><b>Command:</b> {{ item.currentZone?.zoneName }} |
-                <b>Department:</b> {{ item.department?.departmentName }}</small
-              > -->
-        </ng-template>
-      </ng-select>
-    </div>
+      <div class="app-form-row">
+        <label for="" class="form-prompt">Zonal Command</label>
+        <ng-select
+          class="block"
+          style="width: 100%;"
+          placeholder="Select Zonal Command"
+          bindLabel="zonalCommandName"
+          bindValue="zonalCommandCode"
+          [items]="zonalCommands"
+          (change)="onChange($event)"
+          formControlName="zonalCommandCode"
+        >
+          <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+            <div>
+              <span> </span
+              ><span [ngOptionHighlight]="search"
+                >{{ item.zonalCommandName }} Command</span
+              >
+            </div>
+          </ng-template>
+        </ng-select>
+      </div>
 
-    <hr />
+      <div class="app-form-row">
+        <label for="" class="form-prompt">Department/unit </label>
+        <ng-select
+          class="block"
+          style="width: 100%;"
+          placeholder="Select Department"
+          bindLabel="departmentName"
+          bindValue="departmentCode"
+          [items]="departments"
+          formControlName="departmentCode"
+        >
+          <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+            <div>
+              <span> </span
+              ><span [ngOptionHighlight]="search">{{
+                item.departmentName
+              }}</span>
+            </div>
+          </ng-template>
+        </ng-select>
+      </div>
 
-    <div class="app-form-row">
-      <label for="" class="form-prompt">Account Type</label>
-      <ng-select
-        class="block"
-        style="width: 100%;"
-        placeholder="Select For Account type"
-        bindLabel="item"
-        [items]="accountTypes"
-        (change)="onChange($event)"
-      >
-        <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
-          <div>
-            <span> </span><span [ngOptionHighlight]="search">{{ item }}</span>
-          </div>
-          <!-- <small
-            ><b>Command:</b> {{ item.currentZone?.zoneName }} |
-            <b>Department:</b> {{ item.department?.departmentName }}</small
-          > -->
-        </ng-template>
-      </ng-select>
-    </div>
-    <!-- <div>
-      <label for="" class="form-prompt">Effective Promotion Date</label>
-      <input
-        type="text"
-        class="input-text full-width"
-        readonly
-        [owlDateTime]="dt1"
-        [owlDateTimeTrigger]="dt1"
-        placeholder="Select transfer date"
-      />
-      <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>
-    </div> -->
+      <hr />
 
-    <!-- <div class="app-form-row">
-        <label for="" class="form-prompt">Message/description</label>
-        <angular-editor [config]="editorConfig"></angular-editor>
-      </div> -->
-    <div class="app-form-row">
-      <button class="app-button text-white bg-main pull-right">
-        Create User
-      </button>
-      <span class="clearfix"></span>
+      <div class="app-form-row">
+        <label for="" class="form-prompt">Account Type</label>
+        <ng-select
+          class="block"
+          style="width: 100%;"
+          placeholder="Select For Account type"
+          bindLabel="item"
+          [items]="accountTypes"
+          formControlName="accountType"
+        >
+          <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+            <div>
+              <span> </span><span [ngOptionHighlight]="search">{{ item }}</span>
+            </div>
+          </ng-template>
+        </ng-select>
+      </div>
+
+      <div class="app-form-row">
+        <button
+          class="app-button text-white bg-main pull-right"
+          type="submit"
+          [ngClass]="{ 'anim-button': loading }"
+        >
+          Create User
+        </button>
+        <span class="clearfix"></span>
+      </div>
     </div>
-  </div>
+  </form>
+  <!-- Form end -->
 </div>

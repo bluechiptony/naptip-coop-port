@@ -44,6 +44,11 @@ body {
 }
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.office-bg {
+  background-image: url("assets/images/office-bg.jpg");
+  background-size: cover;
+}
+
 .table-height {
   min-height: 550px;
   width: 100%;

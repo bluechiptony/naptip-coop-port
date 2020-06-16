@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AuthenticationState } from '../model/authentication.model';
+import {
+  AuthenticationState,
+  PasswordRequest,
+} from '../model/authentication.model';
 import { User, users } from '../model/user.model';
 import * as jwtDecode from 'jwt-decode';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Store } from '@ngrx/store';
 import { ToastrService } from 'ngx-toastr';
@@ -53,6 +56,57 @@ export class AuthenticationService {
 
   makeLoginAttempt = (email: string): User => {
     return users.find((user) => user.emailAddress === email);
+  };
+
+  makeRemoteLoginRequest = (loginRequest: any): Observable<string> => {
+    return this.http.post<string>(`${this.BASE_URL}/auth/login`, loginRequest);
+  };
+
+  makeActivationRequest = (activationRequest: any) => {
+    return this.http.post(
+      `${this.BASE_URL}/auth/activate-account`,
+      activationRequest
+    );
+  };
+
+  makePasswordRequest = (emailAddress: string) => {
+    return this.http.post(`${this.BASE_URL}/auth/forgot-password`, {
+      emailAddress: emailAddress,
+    });
+  };
+
+  resetPassword = (activationRequest: any) => {
+    return this.http.post(
+      `${this.BASE_URL}/auth/reset-password`,
+      activationRequest
+    );
+  };
+
+  makePasswordResetRequest = (request: any) => {
+    return this.http.post<any>(
+      `${this.BASE_URL}/auth/forgot-password`,
+      request
+    );
+  };
+
+  setPassword = (request: PasswordRequest, isActivation: boolean) => {
+    let url = `${this.BASE_URL}/auth/activate-account`;
+    if (isActivation) {
+      url = `${this.BASE_URL}/auth/reset-password`;
+    }
+    return this.http.post<any>(url, request);
+  };
+
+  createAuthenticationProfile = (profile: any) => {
+    return this.http.post(`${this.BASE_URL}/auth/create/account`, profile);
+  };
+
+  getUsersAndAccounts = () => {
+    return this.http.get(`${this.BASE_URL}/users/get`);
+  };
+
+  createUserAccount = (user: User) => {
+    return this.http.post(`${this.BASE_URL}/users/create-user`, user);
   };
 
   public showError = (message: string) => {

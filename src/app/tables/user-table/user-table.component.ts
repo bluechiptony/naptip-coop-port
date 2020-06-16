@@ -7,6 +7,7 @@ import { MatSort } from '@angular/material/sort';
 import { Staff } from 'src/app/model/staff.model';
 import { MatDialog } from '@angular/material/dialog';
 import { UserModalComponent } from 'src/app/modals/user-modal/user-modal.component';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-user-table',
@@ -32,7 +33,11 @@ export class UserTableComponent implements OnInit {
   hasError: boolean;
   errorMessage: string;
 
-  constructor(private staff: StaffService, private dialog: MatDialog) {}
+  constructor(
+    private staff: StaffService,
+    private dialog: MatDialog,
+    private authenticationServie: AuthenticationService
+  ) {}
 
   ngOnInit(): void {
     this.prepTableResources();
@@ -58,22 +63,24 @@ export class UserTableComponent implements OnInit {
    */
   fetchStaff = (): void => {
     this.loading = true;
-    this.userSubscription = this.staff.getStaffMembers().subscribe(
-      (data: Staff[]) => {
-        console.log(data);
+    this.userSubscription = this.authenticationServie
+      .getUsersAndAccounts()
+      .subscribe(
+        (data: Staff[]) => {
+          console.log(data);
 
-        this.loading = false;
-        this.hasError = false;
-        this.addStaffToDataSource(data);
-      },
+          this.loading = false;
+          this.hasError = false;
+          this.addStaffToDataSource(data);
+        },
 
-      (error) => {
-        console.log(error);
+        (error) => {
+          console.log(error);
 
-        this.hasError = true;
-        this.loading = false;
-      }
-    );
+          this.hasError = true;
+          this.loading = false;
+        }
+      );
   };
 
   /**

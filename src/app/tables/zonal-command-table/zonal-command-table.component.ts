@@ -57,22 +57,24 @@ export class ZonalCommandTableComponent implements OnInit {
    */
   fetchZonalCommand = (): void => {
     this.loading = true;
-    this.userSubscription = this.zonalCommand.getZonalCommands().subscribe(
-      (data: ZonalCommand[]) => {
-        console.log(data);
+    this.userSubscription = this.zonalCommand
+      .getRemoteZonalCommands()
+      .subscribe(
+        (data: any[]) => {
+          console.log(data);
 
-        this.loading = false;
-        this.hasError = false;
-        this.addZonalCommandToDataSource(data);
-      },
+          this.loading = false;
+          this.hasError = false;
+          this.addZonalCommandToDataSource(data);
+        },
 
-      (error) => {
-        console.log(error);
+        (error) => {
+          console.log(error);
 
-        this.hasError = true;
-        this.loading = false;
-      }
-    );
+          this.hasError = true;
+          this.loading = false;
+        }
+      );
   };
 
   /**

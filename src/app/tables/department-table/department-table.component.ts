@@ -55,8 +55,10 @@ export class DepartmentTableComponent implements OnInit {
    * Fetches departments from remote
    */
   fetchDepartment = (): void => {
+    console.log('loadubgf');
+
     this.loading = true;
-    this.userSubscription = this.department.getDepartments().subscribe(
+    this.userSubscription = this.department.getRemoteDepartments().subscribe(
       (data: Department[]) => {
         console.log(data);
 

@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { AuthenticationState } from '../model/authentication.model';
 import { StaffService } from '../services/staff.service';
 import { Subscription } from 'rxjs';
+import { User } from '../model/user.model';
 
 @Component({
   selector: 'app-profile',
@@ -12,6 +13,7 @@ import { Subscription } from 'rxjs';
 })
 export class ProfileComponent implements OnInit, OnDestroy {
   staff: Staff;
+  user: User;
   authSubscription: Subscription;
   constructor(
     private authStore: Store<AuthenticationState>,
@@ -34,7 +36,8 @@ export class ProfileComponent implements OnInit, OnDestroy {
         console.log(data);
 
         if (data.loggedIn) {
-          this.getStaffDetails(data.user.id);
+          this.user = data.user;
+          // this.getStaffDetails(data.user.id);
         }
       });
   }

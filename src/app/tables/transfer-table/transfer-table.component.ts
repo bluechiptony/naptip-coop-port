@@ -60,8 +60,6 @@ export class TransferTableComponent implements OnInit {
     this.loading = true;
     this.userSubscription = this.promotion.getTransfers().subscribe(
       (data: Transfer[]) => {
-        console.log(data);
-
         this.loading = false;
         this.hasError = false;
         this.addTransferToDataSource(data);

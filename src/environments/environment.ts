@@ -7,7 +7,7 @@ export const environment = {
   authStateKey: 'AUTH_STATE',
   currentStaffStateKey: 'CURRENT_STAFF_STATE',
   adminContextKey: 'ADMIN_CONTEXT_KEY',
-  baseUrl: 'http://loalhost:4500',
+  baseUrl: 'http://localhost:4800',
 };
 
 /*

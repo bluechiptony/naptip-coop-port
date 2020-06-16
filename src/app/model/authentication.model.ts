@@ -9,3 +9,19 @@ export interface AuthenticationState {
 export interface AdminContext {
   context: string;
 }
+
+export interface AuthenticationProfile {
+  authenticationId?: number;
+  userCode: string;
+  emailAddress: string;
+  active?: boolean;
+  accountType: string;
+  password?: string;
+  verificationCode?: string;
+  verificationCodeExpiry?: number;
+}
+
+export interface PasswordRequest {
+  password: string;
+  token: string;
+}

@@ -59,8 +59,6 @@ export class StaffTableComponent implements OnInit {
     this.loading = true;
     this.userSubscription = this.staff.getStaffMembers().subscribe(
       (data: Staff[]) => {
-        console.log(data);
-
         this.loading = false;
         this.hasError = false;
         this.addStaffToDataSource(data);

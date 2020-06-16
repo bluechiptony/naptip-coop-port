@@ -1,11 +1,18 @@
 <div class="container-fluid">
   <div class="route-box bg-white">
     <div class="route-heading">
-      <span class="route-header-text">Zonal Command Page </span>
+      <span class="route-header-text"
+        >{{ zonalCommand?.zonalCommandName }} Command
+      </span>
     </div>
     <div>
       <div class="">
         <mat-tab-group>
+          <mat-tab label="Command Setup">
+            <app-zonal-command-setup
+              [zonalCommand]="zonalCommand"
+            ></app-zonal-command-setup>
+          </mat-tab>
           <mat-tab label="Staff members">
             <app-staff-table></app-staff-table>
           </mat-tab>

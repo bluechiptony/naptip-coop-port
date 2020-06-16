@@ -1,0 +1,157 @@
+<div class="container-fluid">
+  <div class="route-box bg-white">
+    <div class="route-heading">
+      <span class="route-header-text">Create Zonal Command </span>
+    </div>
+    <div class="">
+      <div class="row">
+        <div class="col-lg-5 right-border-vertical">
+          <form [formGroup]="zonalCommandForm" (ngSubmit)="submitForm()">
+            <div class="app-form-row">
+              <label for="" class="form-prompt">Zonal Command Title</label>
+              <input
+                type="text"
+                class="input-text full-width"
+                placeholder="e.g Lagos "
+                formControlName="zonalCommandName"
+              />
+            </div>
+            <div class="app-form-row">
+              <label for="" class="form-prompt">State</label>
+              <ng-select
+                class="block"
+                style="width: 100%;"
+                placeholder="Select State"
+                bindLabel="stateName"
+                bindValue="stateId"
+                [items]="states"
+                (change)="stateSelected($event)"
+                formControlName="state"
+              >
+                <ng-template
+                  ng-option-tmp
+                  let-item="item"
+                  let-search="searchTerm"
+                >
+                  <div>
+                    <span> </span
+                    ><span [ngOptionHighlight]="search">{{
+                      item.stateName
+                    }}</span>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+            <div class="app-form-row">
+              <label for="" class="form-prompt">Local Government Area</label>
+              <ng-select
+                class="block"
+                style="width: 100%;"
+                placeholder="Select local government"
+                bindLabel="lgaName"
+                bindValue="lgaId"
+                [items]="lgas"
+                formControlName="lga"
+              >
+                <ng-template
+                  ng-option-tmp
+                  let-item="item"
+                  let-search="searchTerm"
+                >
+                  <div>
+                    <span> </span
+                    ><span [ngOptionHighlight]="search">{{
+                      item.lgaName
+                    }}</span>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+            <div class="app-form-row">
+              <label for="" class="form-prompt"
+                >Select zonal command units
+              </label>
+              <mat-checkbox (change)="toggleSelectUnits()"></mat-checkbox>
+
+              <span class="clearfix"></span>
+            </div>
+
+            <div class="app-form-row" *ngIf="selectUnits">
+              <!-- <label for="" class="form-prompt"
+                >Select zonal command units
+              </label> -->
+
+              <div class="two-column-grid">
+                <div *ngFor="let department of departments">
+                  <mat-checkbox>{{ department.departmentName }}</mat-checkbox>
+                </div>
+              </div>
+
+              <span class="clearfix"></span>
+            </div>
+            <div class="app-form-row">
+              <label for="" class="form-prompt"
+                >Select Zonal Command head
+              </label>
+              <mat-checkbox (change)="toggleSelectHead()"></mat-checkbox>
+
+              <span class="clearfix"></span>
+            </div>
+
+            <div class="app-form-row" *ngIf="selectHead">
+              <div class="two-column-grid">
+                <div *ngFor="let department of departments">
+                  <mat-checkbox>{{ department.departmentName }}</mat-checkbox>
+                </div>
+              </div>
+
+              <span class="clearfix"></span>
+            </div>
+
+            <div class="app-form-row"></div>
+            <div class="app-form-row">
+              <button
+                type="submit"
+                class="app-button text-white bg-main"
+                [ngClass]="{ 'anim-button': loading }"
+              >
+                Create Zonal Command
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-7">
+          <!-- <button
+              class="app-button text-white bg-main pull-right"
+              (click)="openStaffSelect()"
+            >
+              Add Correspondents
+            </button> -->
+          <div class="staff-meet-container col-lg-12">
+            <div *ngIf="selectedStaff.length === 0" class="empty-container">
+              <div class="center-text">
+                <img
+                  src="assets/images/empty.svg"
+                  height="150"
+                  alt=""
+                  srcset=""
+                />
+                <span class="form-prompt block"
+                  >Select memo correspondents</span
+                >
+              </div>
+            </div>
+            <div *ngIf="selectedStaff.length > 0">
+              <div class="vert-padding adjacent-item-grid-2">
+                <!-- <app-single-personnel
+                    *ngFor="let person of selectedStaff"
+                    [person]="person"
+                  ></app-single-personnel> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

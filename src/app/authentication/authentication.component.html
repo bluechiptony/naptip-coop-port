@@ -1,4 +1,4 @@
-<div class="container-fluid full-page-height bg-main centered-flex">
+<div class="container-fluid full-page-height office-bg centered-flex">
   <div class="login-box bg-white col-lg-3 col-sm-8 col-xs-11 center-text">
     <div class="app-form row">
       <span class="login-title">
@@ -31,7 +31,11 @@
         </span>
       </div>
       <div class="app-form-row">
-        <button type="submit" class="app-button full-width text-white bg-main">
+        <button
+          type="submit"
+          class="app-button full-width text-white bg-main"
+          [ngClass]="{ 'anim-button': loading }"
+        >
           Login
         </button>
       </div>
