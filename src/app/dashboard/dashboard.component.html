@@ -124,7 +124,7 @@
       </div>
     </li>
 
-    <li class="nav-item" *ngIf="adminContext === 'OPERATIONS'">
+    <li class="nav-item" *ngIf="adminContext === 'EREGISTER'">
       <div class="list-menu">
         <i class="uil uil-building"></i>
         <span class="nav-text">Activity</span>
@@ -188,7 +188,7 @@
       </div>
     </li>
 
-    <li class="nav-item" *ngIf="adminContext === 'OPERATIONS'">
+    <li class="nav-item" *ngIf="adminContext === 'EREGISTER'">
       <div class="list-menu">
         <i class="uil uil-users-alt"></i>
         <span class="nav-text">Users</span>
@@ -206,7 +206,7 @@
       </div>
     </li>
     <li
-      *ngIf="adminContext === 'OPERATIONS'"
+      *ngIf="adminContext === 'EREGISTER'"
       class="nav-item"
       [routerLink]="['settings/organization']"
       routerLinkActive="router-link-active"
@@ -407,8 +407,8 @@
           <span mat-menu-item (click)="changeContext('HUMAN_RESOURCES')">
             Human Resources
           </span>
-          <span mat-menu-item (click)="changeContext('OPERATIONS')">
-            Operations
+          <span mat-menu-item (click)="changeContext('EREGISTER')">
+            E - Register
           </span>
         </mat-menu>
       </span>
