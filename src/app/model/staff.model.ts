@@ -68,9 +68,9 @@ export const staffMembers: Staff[] = [
     id: '723467',
     staffCode: 'HSHA2347789',
     staffNumber: 'HSD02939',
-    firstName: 'Julie',
-    middleName: 'Gandolfi',
-    lastName: 'Okah-Donli',
+    firstName: 'Imaan',
+    middleName: 'Sulaiman',
+    lastName: 'Ibrahim',
     dob: new Date(),
     stateOfOrigin: 'Delta',
     lgaOfOrigin: 'Asaba',
@@ -79,7 +79,7 @@ export const staffMembers: Staff[] = [
     gender: 'FEMALE',
     currentZone: zonalCommands[3],
     profileUrl:
-      'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200',
+      'https://media3.s-nbcnews.com/i/newscms/2017_27/2062091/profile_picture_682959292d573956be3612eee54559bf.png',
     gradeLevel: '12',
     step: '7',
     designation: 'Administrative Office',
@@ -99,7 +99,7 @@ export const staffMembers: Staff[] = [
     gender: 'MALE',
     currentZone: zonalCommands[3],
     profileUrl:
-      'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200',
+      'https://media3.s-nbcnews.com/i/newscms/2017_27/2062091/profile_picture_682959292d573956be3612eee54559bf.png',
     gradeLevel: '12',
     step: '7',
     designation: 'Principal Office',
@@ -119,7 +119,7 @@ export const staffMembers: Staff[] = [
     gender: 'FEMALE',
     currentZone: zonalCommands[2],
     profileUrl:
-      'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200',
+      'https://media3.s-nbcnews.com/i/newscms/2017_27/2062091/profile_picture_682959292d573956be3612eee54559bf.png',
     gradeLevel: '8',
     step: '4',
     designation: 'Supervisor',
@@ -139,7 +139,7 @@ export const staffMembers: Staff[] = [
     gender: 'MALE',
     currentZone: zonalCommands[5],
     profileUrl:
-      'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200',
+      'https://media3.s-nbcnews.com/i/newscms/2017_27/2062091/profile_picture_682959292d573956be3612eee54559bf.png',
     gradeLevel: '11',
     step: '4',
     designation: 'Administrator',
@@ -159,7 +159,7 @@ export const staffMembers: Staff[] = [
     gender: 'FEMALE',
     currentZone: zonalCommands[1],
     profileUrl:
-      'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200',
+      'https://media3.s-nbcnews.com/i/newscms/2017_27/2062091/profile_picture_682959292d573956be3612eee54559bf.png',
     gradeLevel: '13',
     step: '12',
     designation: 'Assistant Director',

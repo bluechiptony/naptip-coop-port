@@ -4,6 +4,7 @@ export interface Training {
   trainingTitle: string;
   category: string;
   startDate: Date;
+  sponsor: string;
   endDate: Date;
   description: string;
   createdDate: Date;
@@ -19,6 +20,7 @@ export const trainings: Training[] = [
     startDate: new Date(),
     endDate: new Date(),
     description: 'Text',
+    sponsor: 'James Okon',
     createdDate: new Date(),
     updatedDate: new Date(),
   },
@@ -29,6 +31,7 @@ export const trainings: Training[] = [
     category: 'Forensics and support',
     startDate: new Date(),
     endDate: new Date(),
+    sponsor: 'Chalya Reop',
     description: 'Description of proggramme',
     createdDate: new Date(),
     updatedDate: new Date(),
